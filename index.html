@@ -290,8 +290,18 @@
   .sc h4{margin:11px 0 4px;font-size:.95rem;color:var(--brand)}
   .sc p{margin:0;font-size:.85rem;color:var(--ink-2);line-height:1.65}
 
-  .kpi3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:14px 0 0}
-  @media (max-width:700px){ .kpi3{grid-template-columns:1fr} }
+  .sc-wide{display:flex;gap:18px;align-items:center;margin:16px 0 0;
+    border:1px solid var(--line);border-radius:14px;padding:12px;background:#fbfdfe}
+  .sc-wide .phone{max-width:118px;flex:0 0 auto;border-width:5px;border-radius:13px;
+    box-shadow:0 6px 16px rgba(9,24,34,.16)}
+  .sc-wide h4{margin:0 0 4px;font-size:.95rem;color:var(--brand)}
+  .sc-wide p{margin:0;font-size:.86rem;color:var(--ink-2);line-height:1.7}
+  @media (max-width:560px){
+    .sc-wide{flex-direction:column;align-items:stretch;text-align:center}
+    .sc-wide .phone{max-width:150px;margin-inline:auto}
+  }
+
+  .kpi3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:14px 0 0}  @media (max-width:700px){ .kpi3{grid-template-columns:1fr} }
   .kpi3 .k{background:#f7fafc;border:1px solid var(--line);border-radius:12px;padding:13px 15px}
   .kpi3 .t{font-weight:800;color:var(--brand);font-size:.95rem;margin-bottom:4px}
   .kpi3 p{margin:0;font-size:.86rem;color:var(--ink-2);line-height:1.65}
@@ -308,8 +318,8 @@
     <div class="hero-top">
       <img class="brandmark" src="assets/logo.png" alt="EhabLab">
       <div>
-        <div class="kicker lang-ar">دليل سريع · الإصدار 1.0.0+1</div>
-        <div class="kicker lang-en">Quick guide · version 1.0.0+1</div>
+        <div class="kicker lang-ar">دليل سريع · الإصدار 1.0.1+2</div>
+        <div class="kicker lang-en">Quick guide · version 1.0.1+2</div>
       </div>
       <div class="langswitch" role="group" aria-label="Language">
         <button type="button" data-lang-set="ar" class="on">العربية</button>
@@ -451,6 +461,15 @@
     </div>
     <div class="lang-en">
       <p class="sub" style="margin:14px 0 0">Also there: <strong>search</strong> across the whole bank, <strong>filters</strong> to build a set, <strong>analytics</strong> for your pass prediction, and <strong>lab tools</strong> for the calculations.</p>
+    </div>
+
+    <div class="sc-wide">
+      <div class="phone"><img src="screens/feedback.png" alt="Send feedback"></div>
+      <div>
+        <h4><span class="lang-ar">ملاحظتك تصلنا</span><span class="lang-en">Your note reaches us</span></h4>
+        <p class="lang-ar">من <strong>الإعدادات → أرسل ملاحظة</strong>: تقييم، وسبب، وسطر واحد. تُحفظ على جهازك إن لم يوجد اتصال، وتُرسل تلقائياً عند عودته.</p>
+        <p class="lang-en">From <strong>Settings → Send feedback</strong>: a rating, a reason, one line. It is kept on your device when you are offline and sends itself when you reconnect.</p>
+      </div>
     </div>
   </section>
 
