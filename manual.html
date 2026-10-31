@@ -1,0 +1,1906 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-lang="ar">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>الدليل التفصيلي — EhabLab · MedLab QBank</title>
+<meta name="description" content="دليل استخدام تطبيق EhabLab MedLab QBank: بنك 2402 سؤالاً في 8 أقسام، يعمل دون إنترنت، مع تكرار متباعد وامتحانات تجريبية بأوزان ASCP.">
+<link rel="icon" href="assets/logo.png">
+<style>
+  :root{
+    --brand:#0f2a44;
+    --brand-2:#0e7c7b;
+    --brand-3:#12a19f;
+    --brand-soft:#e7f2f1;
+    --ink:#16202a;
+    --ink-2:#42525f;
+    --ink-3:#6b7b88;
+    --line:#dfe6ec;
+    --line-2:#eef2f6;
+    --bg:#f3f6f8;
+    --card:#ffffff;
+    --warn:#8a5a00;
+    --warn-bg:#fff6e2;
+    --danger:#8c1d1d;
+    --danger-bg:#fdeeee;
+    --ok:#1d5c3a;
+    --ok-bg:#e9f6ee;
+    --gold:#a97400;
+    --radius:16px;
+    --shadow:0 1px 2px rgba(16,32,44,.06),0 8px 24px rgba(16,32,44,.06);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:"Segoe UI","Noto Naskh Arabic",Tahoma,Arial,sans-serif;
+    font-size:16.5px;
+    line-height:1.85;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--brand-2);text-decoration:none}
+  a:hover{text-decoration:underline}
+  code,kbd,.mono{font-family:Consolas,"Courier New",monospace;direction:ltr;unicode-bidi:isolate}
+  code{background:#eef3f6;border:1px solid #e0e8ee;border-radius:6px;padding:1px 6px;font-size:.88em;overflow-wrap:anywhere;word-break:break-word}
+
+  /* ------------------------------------------------------- language switch */
+  html[data-lang="en"] .lang-ar{display:none !important}
+  html[data-lang="ar"] .lang-en{display:none !important}
+
+  /* ---------------------------------------------------------------- hero */
+  .hero{
+    background:
+      radial-gradient(1100px 420px at 82% -30%, rgba(18,161,159,.30), transparent 62%),
+      radial-gradient(900px 380px at 12% 120%, rgba(18,161,159,.16), transparent 60%),
+      linear-gradient(135deg,#071726 0%,#0f2a44 48%,#0e7c7b 100%);
+    color:#fff;padding:40px 28px 36px;
+  }
+  .hero-in{max-width:1180px;margin:0 auto}
+  .hero-top{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+  .brandmark{width:46px;height:46px;border-radius:13px;box-shadow:0 6px 18px rgba(0,0,0,.28);flex:0 0 auto;display:block}
+  .kicker{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:#9fd5d3;font-weight:700}
+  .hero h1{margin:.55rem 0 .35rem;font-size:2.3rem;line-height:1.25;font-weight:800;letter-spacing:-.01em}
+  .hero h1 .sub-t{display:block;font-weight:600;font-size:.6em;color:#bfe2e0;margin-top:.15rem}
+  .hero p.lead{margin:0;max-width:64ch;color:#d3e6ec;font-size:1.02rem}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+  .chip{
+    display:inline-flex;align-items:center;gap:6px;
+    background:rgba(255,255,255,.11);border:1px solid rgba(255,255,255,.22);
+    color:#eaf5f9;border-radius:999px;padding:5px 13px;font-size:.83rem;font-weight:600;
+    backdrop-filter:blur(2px);
+  }
+  .chip b{font-weight:800;color:#fff}
+  .langswitch{
+    display:flex;gap:4px;margin-inline-start:auto;
+    background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.24);
+    border-radius:999px;padding:3px;
+  }
+  .langswitch button{
+    background:none;border:0;color:#cfe6ee;font:inherit;font-size:.82rem;font-weight:700;
+    padding:4px 13px;border-radius:999px;cursor:pointer;line-height:1.4;
+  }
+  .langswitch button:hover{color:#fff}
+  .langswitch button.on{background:#fff;color:var(--brand)}
+
+  /* ---------------------------------------------------------------- layout */
+  .wrap{max-width:1180px;margin:0 auto;padding:34px 24px 80px;display:grid;grid-template-columns:272px minmax(0,1fr);gap:34px;align-items:start}
+  @media (max-width:980px){ .wrap{grid-template-columns:1fr;padding-top:22px} .toc{position:static !important;order:2} }
+
+  /* ---------------------------------------------------------------- toc */
+  .toc{
+    position:sticky;top:22px;
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:16px 14px;box-shadow:var(--shadow);max-height:calc(100vh - 44px);overflow:auto;
+  }
+  .toc h2{font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);margin:2px 6px 10px}
+  .toc ol{list-style:none;margin:0;padding:0}
+  .toc li{margin:1px 0}
+  .toc a{
+    display:flex;gap:9px;align-items:baseline;color:var(--ink-2);
+    padding:6px 8px;border-radius:9px;font-size:.92rem;line-height:1.5;
+  }
+  .toc a:hover{background:var(--brand-soft);color:var(--brand);text-decoration:none}
+  .toc a.active{background:var(--brand);color:#fff}
+  .toc a .n{
+    flex:0 0 auto;font-size:.72rem;font-weight:800;color:var(--brand-2);
+    background:var(--brand-soft);border-radius:6px;padding:1px 6px;min-width:22px;text-align:center;
+  }
+  .toc a.active .n{background:rgba(255,255,255,.2);color:#fff}
+
+  /* ---------------------------------------------------------------- sections */
+  main{min-width:0}
+  section{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:26px 26px 24px;margin:0 0 22px;box-shadow:var(--shadow);scroll-margin-top:16px;
+  }
+  section h2{
+    display:flex;align-items:center;gap:12px;
+    font-size:1.42rem;line-height:1.35;margin:0 0 6px;font-weight:800;letter-spacing:-.01em;
+  }
+  section h2 .num{
+    flex:0 0 auto;width:34px;height:34px;border-radius:10px;display:grid;place-items:center;
+    background:linear-gradient(160deg,var(--brand),var(--brand-2));color:#fff;font-size:.95rem;font-weight:800;
+  }
+  .sub{color:var(--ink-3);margin:0 0 18px;font-size:.95rem}
+  h3{font-size:1.08rem;margin:26px 0 8px;font-weight:800;color:var(--brand)}
+  h4{font-size:.98rem;margin:18px 0 6px;font-weight:700}
+  p{margin:0 0 12px}
+  ul,ol{margin:0 0 14px;padding-inline-start:1.35em}
+  li{margin:5px 0}
+  li::marker{color:var(--brand-2);font-weight:700}
+  strong{font-weight:800}
+  .ltr{direction:ltr;unicode-bidi:isolate;display:inline-block}
+
+  /* ---------------------------------------------------------------- callouts */
+  .box{border-radius:12px;padding:14px 16px;margin:16px 0;border:1px solid;font-size:.95rem}
+  .box p:last-child,.box ul:last-child,.box ol:last-child{margin-bottom:0}
+  .box .t{font-weight:800;display:flex;align-items:center;gap:8px;margin-bottom:6px}
+  .note{background:var(--brand-soft);border-color:#c7e2e1;color:#0c3a44}
+  .note .t{color:#0a5f60}
+  .warn{background:var(--warn-bg);border-color:#f2dfb4;color:#5f4100}
+  .warn .t{color:var(--warn)}
+  .danger{background:var(--danger-bg);border-color:#f3cccc;color:#6d1414}
+  .danger .t{color:var(--danger)}
+  .ok{background:var(--ok-bg);border-color:#c9e6d4;color:#154c30}
+  .ok .t{color:var(--ok)}
+
+  /* ---------------------------------------------------------------- steps */
+  .steps{list-style:none;counter-reset:st;padding:0;margin:8px 0 4px}
+  .steps > li{
+    counter-increment:st;position:relative;padding-inline-start:46px;padding-inline-end:0;margin:0 0 16px;
+  }
+  .steps > li::before{
+    content:counter(st);position:absolute;inset-inline-start:0;top:2px;
+    width:30px;height:30px;border-radius:50%;display:grid;place-items:center;
+    background:#fff;border:2px solid var(--brand-2);color:var(--brand);font-weight:800;font-size:.88rem;
+  }
+  .steps > li::after{
+    content:"";position:absolute;inset-inline-start:14px;top:34px;bottom:-14px;width:2px;
+    background:linear-gradient(#cfe0e8,#eef3f6);
+  }
+  .steps > li:last-child::after{display:none}
+  .steps > li b{display:block;font-size:1rem;margin-bottom:2px}
+
+  /* ---------------------------------------------------------------- tables */
+  table{width:100%;border-collapse:collapse;margin:14px 0 6px;font-size:.93rem}
+  th,td{padding:10px 12px;text-align:start;vertical-align:top;border-bottom:1px solid var(--line-2)}
+  thead th{background:#f7fafc;color:var(--ink-3);font-size:.82rem;letter-spacing:.04em;text-transform:uppercase;border-bottom:1px solid var(--line)}
+  tbody tr:hover{background:#fafcfd}
+  td .badge{white-space:nowrap}
+  .scroll-x{overflow-x:auto;margin:14px 0 6px}
+  .scroll-x table{margin:0}
+  @media (max-width:560px){
+    .scroll-x table{font-size:.88rem}
+    .scroll-x th,.scroll-x td{padding:8px 9px}
+  }
+
+  .badge{display:inline-block;border-radius:999px;padding:1px 10px;font-size:.78rem;font-weight:700;border:1px solid}
+  .b-gen{background:#eaf3f8;border-color:#c9e0ea;color:#0d4f68}
+  .b-make{background:#f3eefb;border-color:#ddd0f0;color:#4b2a7a}
+  .b-un{background:#f1f3f5;border-color:#dde3e8;color:#4a5a67}
+  .b-ok{background:var(--ok-bg);border-color:#c9e6d4;color:var(--ok)}
+  .b-teal{background:var(--brand-soft);border-color:#c7e2e1;color:#0a5f60}
+  .b-warn{background:var(--warn-bg);border-color:#f2dfb4;color:var(--warn)}
+
+  /* ---------------------------------------------------------------- stats */
+  .statgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(132px,1fr));gap:10px;margin:16px 0}
+  .stat{background:#f7fafc;border:1px solid var(--line);border-radius:12px;padding:10px 13px}
+  .stat .k{font-size:.72rem;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-3);font-weight:700;line-height:1.4}
+  .stat .v{font-size:1.28rem;font-weight:800;color:var(--brand);line-height:1.35}
+  .stat .n{font-size:.78rem;color:var(--ink-3);line-height:1.5}
+
+  /* ---------------------------------------------------------------- figures */
+  figure{margin:18px 0 6px;text-align:center}
+  .figrow{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;align-items:start}
+  @media (max-width:760px){ .figrow{grid-template-columns:1fr} }
+
+  .phone{
+    max-width:320px;margin-inline:auto;
+    border:9px solid #14181d;border-radius:26px;overflow:hidden;background:#0d1116;
+    box-shadow:0 12px 28px rgba(9,24,34,.22),0 2px 0 rgba(255,255,255,.5) inset;
+    line-height:0;
+  }
+  .phone img{width:100%;height:auto;display:block}
+  .phone.wide{max-width:520px}
+  figcaption{font-size:.86rem;color:var(--ink-3);margin-top:8px;text-align:center;line-height:1.6}
+  figcaption b{color:var(--ink-2)}
+
+  /* annotated markers, placed outside the frame on the inline-end side */
+  .annot{position:relative;width:fit-content;margin-inline:auto;padding-inline-end:44px}
+  .mk{
+    position:absolute;inset-inline-end:2px;transform:translateY(-50%);
+    width:28px;height:28px;border-radius:50%;display:grid;place-items:center;
+    background:var(--brand);color:#fff;font-weight:800;font-size:.82rem;
+    box-shadow:0 2px 6px rgba(11,79,108,.35);z-index:2;
+  }
+  .mk::before{
+    content:"";position:absolute;inset-inline-end:28px;top:50%;width:14px;height:2px;background:var(--brand);opacity:.45;
+  }
+  .legend{counter-reset:lg;list-style:none;padding:0;margin:14px 0 0;font-size:.94rem}
+  .legend li{counter-increment:lg;position:relative;padding-inline-start:38px;margin:7px 0;color:var(--ink-2)}
+  .legend li::before{
+    content:counter(lg);position:absolute;inset-inline-start:0;top:3px;width:24px;height:24px;border-radius:50%;
+    display:grid;place-items:center;background:var(--brand-soft);color:var(--brand);font-weight:800;font-size:.76rem;
+    border:1px solid #c7e2e1;
+  }
+  .legend b{color:var(--ink)}
+
+  /* ---------------------------------------------------------------- faq */
+  details{
+    border:1px solid var(--line);border-radius:12px;padding:0;margin:10px 0;background:#fcfdfe;overflow:hidden;
+  }
+  details[open]{background:#fff;box-shadow:0 4px 14px rgba(16,32,44,.05)}
+  summary{
+    cursor:pointer;padding:13px 16px;font-weight:700;color:var(--ink);list-style:none;
+    display:flex;gap:10px;align-items:center;justify-content:space-between;
+  }
+  summary::-webkit-details-marker{display:none}
+  summary::after{
+    content:"+";flex:0 0 auto;width:22px;height:22px;border-radius:6px;display:grid;place-items:center;
+    background:var(--brand-soft);color:var(--brand);font-weight:800;font-size:1rem;
+  }
+  details[open] summary::after{content:"−"}
+  details .body{padding-inline:16px;padding-bottom:14px;color:var(--ink-2);font-size:.95rem}
+  details .body p:last-child{margin-bottom:0}
+
+  /* ---------------------------------------------------------------- misc */
+  .kv{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:.92rem;margin:12px 0}
+  .kv dt{color:var(--ink-3);font-weight:700}
+  .kv dd{margin:0;color:var(--ink)}
+  .foot{
+    max-width:1180px;margin:0 auto;padding:0 24px 60px;color:var(--ink-3);font-size:.86rem;line-height:1.9;
+  }
+  .foot .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px;box-shadow:var(--shadow)}
+  .foot h3{color:var(--ink-2);font-size:.95rem;margin:0 0 6px}
+  .top{position:fixed;inset-inline-end:18px;bottom:18px;background:var(--brand);color:#fff;border-radius:999px;
+       padding:9px 16px;font-size:.85rem;font-weight:700;box-shadow:0 6px 18px rgba(11,79,108,.35);z-index:9}
+  .top:hover{text-decoration:none;background:var(--brand-2)}
+
+  @media print{
+    body{background:#fff;font-size:11pt}
+    .hero{background:#0f2a44 !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .toc,.top,.langswitch{display:none}
+    .wrap{display:block;padding:0;max-width:none}
+    section{break-inside:avoid;box-shadow:none;border-color:#ccc;margin-bottom:14px;page-break-inside:avoid}
+    .phone{box-shadow:none}
+    figure{page-break-inside:avoid}
+    a{color:#000;text-decoration:none}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-in">
+    <div class="hero-top">
+      <img class="brandmark" src="assets/logo.png" alt="EhabLab">
+      <div>
+        <div class="kicker lang-ar">دليل المستخدم · الإصدار 1.0.0+1</div>
+        <div class="kicker lang-en">User guide · version 1.0.0+1</div>
+      </div>
+      <div class="langswitch" role="group" aria-label="Language">
+        <button type="button" data-lang-set="ar" class="on">العربية</button>
+        <button type="button" data-lang-set="en">English</button>
+      </div>
+    </div>
+
+    <div class="lang-ar">
+      <h1>EhabLab — بنك أسئلة المختبرات الطبية<span class="sub-t">2402 سؤالاً · 8 أقسام · يعمل دون إنترنت</span></h1>
+      <p class="lead">
+        هذا الدليل يشرح التطبيق شاشةً بشاشة: كيف تبدأ مذاكرة، وكيف تقرأ الشرح بعد كل سؤال،
+        وكيف تبني امتحاناً تجريبياً بأوزان ASCP، وكيف يعمل التكرار المتباعد حتى لا تنسى ما درسته —
+        كل ذلك على جهازك، دون إنترنت، وبحساب واحد للمزامنة عند توفّر الشبكة.
+      </p>
+      <div class="chips">
+        <span class="chip">البنك: <b>2,402</b> سؤالاً</span>
+        <span class="chip">الأقسام: <b>8</b></span>
+        <span class="chip">الصور: <b>73</b></span>
+        <span class="chip">تلميحات المدى: <b>468</b></span>
+        <span class="chip">أوفلاين بالكامل</span>
+        <span class="chip">أندرويد + ويب</span>
+        <span class="chip">عربي / إنجليزي</span>
+      </div>
+    </div>
+
+    <div class="lang-en">
+      <h1>EhabLab — MedLab QBank<span class="sub-t">2,402 questions · 8 departments · fully offline</span></h1>
+      <p class="lead">
+        This guide walks the app screen by screen: how to start a study session, how to read the
+        explanation after every question, how to build an ASCP-weighted mock exam, and how spaced
+        repetition keeps what you studied from fading — all on your device, without a connection,
+        with one account for sync when the network is there.
+      </p>
+      <div class="chips">
+        <span class="chip">Bank: <b>2,402</b> questions</span>
+        <span class="chip">Departments: <b>8</b></span>
+        <span class="chip">Images: <b>73</b></span>
+        <span class="chip">Range hints: <b>468</b></span>
+        <span class="chip">Fully offline</span>
+        <span class="chip">Android + Web</span>
+        <span class="chip">AR / EN</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- ============================================================ TOC -->
+  <nav class="toc lang-ar" aria-label="فهرس الدليل">
+    <h2>محتويات الدليل</h2>
+    <ol>
+      <li><a href="#intro"><span class="n">٠</span> قبل أن تبدأ</a></li>
+      <li><a href="#quick"><span class="n">١</span> بدء سريع في دقيقة</a></li>
+      <li><a href="#install"><span class="n">٢</span> التثبيت والدخول الأول</a></li>
+      <li><a href="#home"><span class="n">٣</span> الشاشة الرئيسية</a></li>
+      <li><a href="#study"><span class="n">٤</span> المذاكرة (Study)</a></li>
+      <li><a href="#explain"><span class="n">٥</span> الشرح والتقييم</a></li>
+      <li><a href="#mock"><span class="n">٦</span> الامتحان التجريبي</a></li>
+      <li><a href="#palette"><span class="n">٧</span> لوحة الأسئلة</a></li>
+      <li><a href="#result"><span class="n">٨</span> شاشة النتيجة</a></li>
+      <li><a href="#library"><span class="n">٩</span> المحفوظات والأخطاء والملاحظات</a></li>
+      <li><a href="#search"><span class="n">١٠</span> البحث</a></li>
+      <li><a href="#filter"><span class="n">١١</span> فلترة الأسئلة</a></li>
+      <li><a href="#analytics"><span class="n">١٢</span> الإحصاءات</a></li>
+      <li><a href="#tools"><span class="n">١٣</span> أدوات المختبر</a></li>
+      <li><a href="#settings"><span class="n">١٤</span> الإعدادات</a></li>
+      <li><a href="#account"><span class="n">١٥</span> الحساب والمزامنة</a></li>
+      <li><a href="#admin"><span class="n">١٦</span> إدارة المحتوى</a></li>
+      <li><a href="#content"><span class="n">١٧</span> المحتوى والمصادر</a></li>
+      <li><a href="#faq"><span class="n">١٨</span> أسئلة شائعة ومشاكل</a></li>
+      <li><a href="#limits"><span class="n">١٩</span> الحدود والتنبيه الطبي</a></li>
+    </ol>
+  </nav>
+
+  <nav class="toc lang-en" aria-label="Guide contents">
+    <h2>Contents</h2>
+    <ol>
+      <li><a href="#intro"><span class="n">00</span> Before you start</a></li>
+      <li><a href="#quick"><span class="n">01</span> Quick start in a minute</a></li>
+      <li><a href="#install"><span class="n">02</span> Install &amp; first sign-in</a></li>
+      <li><a href="#home"><span class="n">03</span> Home</a></li>
+      <li><a href="#study"><span class="n">04</span> Study mode</a></li>
+      <li><a href="#explain"><span class="n">05</span> Explanation &amp; grading</a></li>
+      <li><a href="#mock"><span class="n">06</span> Mock exam</a></li>
+      <li><a href="#palette"><span class="n">07</span> Question palette</a></li>
+      <li><a href="#result"><span class="n">08</span> Result screen</a></li>
+      <li><a href="#library"><span class="n">09</span> Bookmarks, mistakes, notes</a></li>
+      <li><a href="#search"><span class="n">10</span> Search</a></li>
+      <li><a href="#filter"><span class="n">11</span> Filter builder</a></li>
+      <li><a href="#analytics"><span class="n">12</span> Analytics</a></li>
+      <li><a href="#tools"><span class="n">13</span> Lab tools</a></li>
+      <li><a href="#settings"><span class="n">14</span> Settings</a></li>
+      <li><a href="#account"><span class="n">15</span> Account &amp; sync</a></li>
+      <li><a href="#admin"><span class="n">16</span> Admin CMS</a></li>
+      <li><a href="#content"><span class="n">17</span> Content &amp; sources</a></li>
+      <li><a href="#faq"><span class="n">18</span> FAQ &amp; troubleshooting</a></li>
+      <li><a href="#limits"><span class="n">19</span> Limits &amp; medical notice</a></li>
+    </ol>
+  </nav>
+
+  <main>
+    <!-- ======================================================== 0 -->
+    <section id="intro">
+      <div class="lang-ar">
+        <h2><span class="num">٠</span> قبل أن تبدأ: ما هذا التطبيق وما ليس هو</h2>
+        <p class="sub">ثلاث دقائق تقرأها الآن توفّر عليك سوء فهم لاحق.</p>
+
+        <div class="figrow">
+          <div class="box ok" style="margin:0">
+            <div class="t">✓ ما يفعله</div>
+            <ul style="margin:0">
+              <li><strong>2402 سؤال</strong> في ثمانية أقسام، كل سؤال بأربعة خيارات وشرح مفصّل يقول لماذا الإجابة صحيحة ولماذا كل خيار آخر خطأ.</li>
+              <li>يبني امتحاناً تجريبياً <strong>بأوزان ASCP</strong> ويصحّحه فوراً بحد نجاح 65%.</li>
+              <li>يجدول مراجعتك بنظام <strong>SM-2</strong> (١ ← ٣ ← ٧ ← ١٤ ← ٣٠ يوماً) فلا يضيع ما درسته.</li>
+              <li>يعمل كاملاً <strong>دون إنترنت</strong>: البنك والصور محمولة داخل التطبيق.</li>
+            </ul>
+          </div>
+          <div class="box danger" style="margin:0">
+            <div class="t">✕ ما لا يفعله</div>
+            <ul style="margin:0">
+              <li><strong>ليس مرجعاً طبياً</strong>: لا يعطي تشخيصاً ولا قراراً سريرياً — إنه أداة مذاكرة للامتحان.</li>
+              <li>لا يترجم النصوص الطبية إلى العربية؛ الشرح يبقى إنجليزياً دقيقاً.</li>
+              <li>لا ينزّل صوراً من الإنترنت: الصور من مصدرك أنت فقط.</li>
+              <li>لا يضمن أن كل سؤال «بورد» — جزء من البنك تدريب مباشر على المفاهيم.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="box note">
+          <div class="t">لماذا النص الطبي إنجليزي؟</div>
+          <p>
+            الواجهة — الأزرار والعناوين والإعدادات — عربية أو إنجليزية حسب اختيارك، لكن
+            <strong>نص السؤال والخيارات والشرح يبقى إنجليزياً باتجاه LTR</strong>، لأن الامتحان نفسه
+            إنجليزي، ولأن ترجمة المصطلح الطبي تُفسد الدقة. هذا قرار مقصود، لا نقص في الترجمة.
+          </p>
+        </div>
+
+        <table>
+          <thead><tr><th style="width:34%">المصطلح في الواجهة</th><th>معناه</th></tr></thead>
+          <tbody>
+            <tr><td><span class="badge b-gen">D1 – D8</span></td><td>الأقسام الثمانية: هيماتولوجي، كيمياء وسوائل، بكتيريا وفطريات، طفيليات/فيروسات/سل، أنسجة وخلايا، بنك دم، مناعة وجزيئات، ضبط جودة وسلامة.</td></tr>
+            <tr><td><span class="badge b-teal">Mastery</span></td><td>نسبة إتقان متحركة تُحسب من آخر إجاباتك، لا من عدد الأسئلة التي حللتها.</td></tr>
+            <tr><td><span class="badge b-teal">Due today</span></td><td>الأسئلة التي حان موعد مراجعتها حسب جدول SM-2.</td></tr>
+            <tr><td><span class="badge b-un">Range hint</span></td><td>تلميح المدى الطبيعي للتحليل، موجود في 468 سؤالاً.</td></tr>
+            <tr><td><span class="badge b-make">ASCP mix</span></td><td>امتحان شامل موزّع على الأقسام بأوزان مخطط ASCP.</td></tr>
+            <tr><td><span class="badge b-warn">Second attempt</span></td><td>محاولة ثانية على السؤال نفسه تُحسب نصف درجة.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="lang-en">
+        <h2><span class="num">00</span> Before you start: what this app is, and is not</h2>
+        <p class="sub">Three minutes here saves a wrong expectation later.</p>
+
+        <div class="figrow">
+          <div class="box ok" style="margin:0">
+            <div class="t">✓ What it does</div>
+            <ul style="margin:0">
+              <li><strong>2,402 questions</strong> across eight departments, each with four options and an explanation that says why the key is right and why every distractor is wrong.</li>
+              <li>Builds a mock exam <strong>weighted like the ASCP outline</strong> and scores it instantly against a 65% pass mark.</li>
+              <li>Schedules your review with <strong>SM-2</strong> (1 → 3 → 7 → 14 → 30 days) so what you studied does not fade.</li>
+              <li>Runs <strong>entirely offline</strong>: the bank and its images ship inside the app.</li>
+            </ul>
+          </div>
+          <div class="box danger" style="margin:0">
+            <div class="t">✕ What it does not do</div>
+            <ul style="margin:0">
+              <li><strong>It is not a medical reference</strong>: no diagnosis, no clinical decision — it is an exam study tool.</li>
+              <li>It does not translate medical text into Arabic; the explanation stays precise English.</li>
+              <li>It does not download images: images come from your own source only.</li>
+              <li>It does not claim every question is board-level — part of the bank is direct concept drilling.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="box note">
+          <div class="t">Why the medical text is English</div>
+          <p>
+            The chrome — buttons, headings, settings — is Arabic or English as you choose, but
+            <strong>the stem, the options and the explanation stay English and LTR</strong>, because the
+            exam itself is English and translating a lab term costs precision. That is a deliberate
+            decision, not missing translation.
+          </p>
+        </div>
+
+        <table>
+          <thead><tr><th style="width:34%">Term in the UI</th><th>What it means</th></tr></thead>
+          <tbody>
+            <tr><td><span class="badge b-gen">D1 – D8</span></td><td>The eight departments: hematology, chemistry &amp; fluids, bacteriology &amp; mycology, parasitology/virology/TB, histology &amp; cytology, blood bank, immunology &amp; molecular, QC &amp; safety.</td></tr>
+            <tr><td><span class="badge b-teal">Mastery</span></td><td>A rolling accuracy figure computed from your recent answers, not from how many questions you opened.</td></tr>
+            <tr><td><span class="badge b-teal">Due today</span></td><td>Questions whose SM-2 review date has arrived.</td></tr>
+            <tr><td><span class="badge b-un">Range hint</span></td><td>The reference range for the analyte in the stem — present on 468 questions.</td></tr>
+            <tr><td><span class="badge b-make">ASCP mix</span></td><td>A comprehensive exam distributed across departments by ASCP weights.</td></tr>
+            <tr><td><span class="badge b-warn">Second attempt</span></td><td>Answering the same question twice scores half credit.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ======================================================== 1 -->
+    <section id="quick">
+      <div class="lang-ar">
+        <h2><span class="num">١</span> بدء سريع في دقيقة</h2>
+        <p class="sub">إذا أردت النتيجة الآن دون قراءة الدليل كله، اتبع هذه الخطوات الخمس.</p>
+        <ol class="steps">
+          <li><b>افتح التطبيق وسجّل الدخول</b> ببريد إلكتروني. الدخول يعمل أيضاً دون إنترنت — البريد يُحفظ على الجهاز.</li>
+          <li><b>اضغط «Continue»</b> في الرئيسية لتكملة آخر قسم درسته، أو اختر قسماً من الشبكة أدناه.</li>
+          <li><b>اضغط على أحد الخيارات</b> — يظهر الشرح فوراً: لماذا الصحيح صحيح، ولماذا كل خيار آخر خطأ.</li>
+          <li><b>قيّم استرجاعك</b> بأحد الأزرار الأربعة: <strong>Again / Hard / Good / Easy</strong>؛ هذا يحدّد موعد المراجعة القادمة.</li>
+          <li><b>افتح «Mock exam»</b> عندما تريد اختباراً موقوتاً بأوزان ASCP، ثم راجع <strong>Analytics</strong> لترى توقع النجاح.</li>
+        </ol>
+        <div class="box note">
+          <div class="t">حفظ سريع</div>
+          <p>أي سؤال يعجبك أو يزعجك: اضغط أيقونة الحفظ في شريط السؤال، فيصل إلى <strong>Library → Bookmarks</strong>. والأسئلة التي تخطئ فيها تُضاف تلقائياً إلى <strong>Mistakes</strong>.</p>
+        </div>
+      </div>
+
+      <div class="lang-en">
+        <h2><span class="num">01</span> Quick start in a minute</h2>
+        <p class="sub">If you want the result now and not the whole guide, take these five steps.</p>
+        <ol class="steps">
+          <li><b>Open the app and sign in</b> with an email. Sign-in also works offline — the email is stored on the device.</li>
+          <li><b>Tap Continue</b> on Home to resume the department you studied last, or pick one from the grid.</li>
+          <li><b>Tap an option</b> — the explanation appears at once: why the key is right, and why every other option is wrong.</li>
+          <li><b>Grade your recall</b> with <strong>Again / Hard / Good / Easy</strong>. That grade sets the next review date.</li>
+          <li><b>Open Mock exam</b> when you want a timed, ASCP-weighted test, then check <strong>Analytics</strong> for your pass prediction.</li>
+        </ol>
+        <div class="box note">
+          <div class="t">Quick save</div>
+          <p>A question you want to keep: tap the bookmark icon in the question bar and it lands in <strong>Library → Bookmarks</strong>. Anything you get wrong is added to <strong>Mistakes</strong> automatically.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================== 2 -->
+    <section id="install">
+      <div class="lang-ar">
+        <h2><span class="num">٢</span> التثبيت والدخول الأول</h2>
+        <p class="sub">أول تشغيل يمرّ بأربع خطوات قصيرة، ثم لا يعود يحتاج إنترنت.</p>
+
+        <ol class="steps">
+          <li><b>ثبّت التطبيق</b> — ملف APK على أندرويد، أو افتح نسخة الويب في أي متصفح حديث.</li>
+          <li><b>انتظر ثانية واحدة</b> عند أول تشغيل: التطبيق يقرأ البنك المحمول (2402 سؤالاً، نحو 4.8 ميغابايت) ويجهّز الذاكرة المحلية.</li>
+          <li><b>سجّل الدخول</b> بالبريد وكلمة السر عند توفّر مفاتيح السحابة، أو بالبريد وحده في النسخة المحلية.</li>
+          <li><b>أكّد بريدك</b> برمز من ستة أرقام يصل إلى صندوقك — مرة واحدة فقط.</li>
+        </ol>
+
+        <figure>
+          <div class="phone"><img src="screens/login.png" alt="شاشة تسجيل الدخول"></div>
+          <figcaption>الشكل ١ — <b>شاشة الدخول</b>: بريد واحد يكفي للبدء، والمزامنة تُضاف لاحقاً دون فقدان أي تقدّم.</figcaption>
+        </figure>
+
+        <div class="box warn">
+          <div class="t">إن لم يصل رمز التأكيد</div>
+          <p>الرمز يصل من بريد التطبيق لا من Supabase الافتراضي. تحقّق من مجلد الرسائل غير المرغوبة، ثم اضغط <strong>Resend code</strong>. إن تكرّر الفشل فالمشكلة في إعداد SMTP لا في جهازك.</p>
+        </div>
+
+        <div class="scroll-x">
+          <table>
+            <thead><tr><th>طريقة التشغيل</th><th>ما تحتاجه</th><th>المزامنة</th></tr></thead>
+            <tbody>
+              <tr><td><strong>APK على أندرويد</strong></td><td>تنزيل الملف وتثبيت من مصدر غير معروف مرة واحدة</td><td><span class="badge b-ok">تعمل</span> عند توفّر المفاتيح</td></tr>
+              <tr><td><strong>نسخة الويب</strong></td><td>متصفح حديث، دون تثبيت</td><td><span class="badge b-ok">تعمل</span></td></tr>
+              <tr><td><strong>تشغيل محلي للمطوّر</strong></td><td>Flutter SDK ثم <code>flutter run</code></td><td><span class="badge b-un">اختيارية</span> بمفاتيح <code>--dart-define</code></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="box note">
+          <div class="t">التخصيص اختياري</div>
+          <p>زر <strong>Personalize</strong> يسألك عن دورك وهدفك والأقسام التي تركّز عليها. هذه الإجابات تُرتّب الرئيسية فقط — لا تقفل أي محتوى ولا تغيّر البنك.</p>
+        </div>
+      </div>
+
+      <div class="lang-en">
+        <h2><span class="num">02</span> Install &amp; first sign-in</h2>
+        <p class="sub">First launch is four short steps; after that it never needs a connection.</p>
+
+        <ol class="steps">
+          <li><b>Install the app</b> — an APK on Android, or open the web build in any modern browser.</li>
+          <li><b>Wait one second</b> on first launch: the app reads the bundled bank (2,402 questions, about 4.8 MB) and prepares the local cache.</li>
+          <li><b>Sign in</b> with email and password when the cloud keys are configured, or with email alone in the offline build.</li>
+          <li><b>Confirm your email</b> with the six-digit code that arrives in your inbox — once.</li>
+        </ol>
+
+        <figure>
+          <div class="phone"><img src="screens/login.png" alt="Sign-in screen"></div>
+          <figcaption>Figure 1 — <b>Sign-in</b>: one email is enough to start; sync can be added later without losing progress.</figcaption>
+        </figure>
+
+        <div class="box warn">
+          <div class="t">If the code never arrives</div>
+          <p>The code comes from the app's own mail sender, not the default Supabase one. Check spam, then tap <strong>Resend code</strong>. If it keeps failing, the cause is the SMTP configuration, not your device.</p>
+        </div>
+
+        <div class="scroll-x">
+          <table>
+            <thead><tr><th>How you run it</th><th>What it needs</th><th>Sync</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Android APK</strong></td><td>Download the file, allow install from unknown sources once</td><td><span class="badge b-ok">Yes</span> when keys are set</td></tr>
+              <tr><td><strong>Web build</strong></td><td>A modern browser, nothing to install</td><td><span class="badge b-ok">Yes</span></td></tr>
+              <tr><td><strong>Local dev run</strong></td><td>Flutter SDK, then <code>flutter run</code></td><td><span class="badge b-un">Optional</span> via <code>--dart-define</code></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="box note">
+          <div class="t">Personalize is optional</div>
+          <p>The <strong>Personalize</strong> button asks for your role, exam target and focus departments. Those answers only order the Home screen — they lock no content and change no question.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================== 3 -->
+    <section id="home">
+      <div class="lang-ar">
+        <h2><span class="num">٣</span> الشاشة الرئيسية</h2>
+        <p class="sub">كل شيء يبدأ من هنا: أكمل، أو اختبر، أو راجع المستحق.</p>
+
+        <figure>
+          <div class="phone"><img src="screens/home.png" alt="الشاشة الرئيسية"></div>
+          <figcaption>الشكل ٢ — <b>الرئيسية</b>: أكمل من حيث توقفت، أو ابدأ امتحاناً، أو راجع ما استحق اليوم.</figcaption>
+        </figure>
+
+        <table>
+          <thead><tr><th style="width:30%">العنصر</th><th>وظيفته</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Continue</strong></td><td>يفتح آخر قسم درسته. لا يبدأ من D1 افتراضياً بعد اليوم الأول.</td></tr>
+            <tr><td><strong>Daily 10Q</strong></td><td>عشرة أسئلة مختارة لليوم. زر واحد لإنهاء ورد يومك.</td></tr>
+            <tr><td><strong>Due today</strong></td><td>عدد ما استحق من جدول SM-2. صفر يعني لا شيء متراكم — وهذه حالة جيدة.</td></tr>
+            <tr><td><strong>بطاقات الأقسام</strong></td><td>لكل قسم: العدد الكلي، المحلول، المتبقي، ونسبة الإتقان بشريط ملوّن.</td></tr>
+            <tr><td><strong>الشريط السفلي</strong></td><td>أيام متتالية، نقاط XP، وعدد المستحق اليوم.</td></tr>
+            <tr><td><strong>البحث</strong></td><td>يبحث في نص السؤال والخيارات والشرح والوسوم.</td></tr>
+          </tbody>
+        </table>
+
+        <div class="box note">
+          <div class="t">لماذا يظهر 0% بعد أول إجابة صحيحة؟</div>
+          <p>الإتقان ليس «نسبة ما حللته»، بل متوسط متحرك. في أول خمس إجابات يُعطى كل جواب وزناً 0.4، لذا إجابة صحيحة واحدة تُظهر <strong>40%</strong> ثم تتصاعد مع تراكم الإجابات. الرقم يستقر بعد عشر إجابات تقريباً.</p>
+        </div>
+      </div>
+
+      <div class="lang-en">
+        <h2><span class="num">03</span> Home</h2>
+        <p class="sub">Everything starts here: continue, test yourself, or clear what is due.</p>
+
+        <figure>
+          <div class="phone"><img src="screens/home.png" alt="Home screen"></div>
+          <figcaption>Figure 2 — <b>Home</b>: resume where you stopped, start an exam, or review what is due today.</figcaption>
+        </figure>
+
+        <table>
+          <thead><tr><th style="width:30%">Element</th><th>What it does</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Continue</strong></td><td>Opens the department you studied last. It no longer defaults to D1 after your first day.</td></tr>
+            <tr><td><strong>Daily 10Q</strong></td><td>Ten questions chosen for today — one tap to finish your daily dose.</td></tr>
+            <tr><td><strong>Due today</strong></td><td>How many cards SM-2 says are due. Zero means nothing is piling up, which is a good state.</td></tr>
+            <tr><td><strong>Department cards</strong></td><td>Per department: total, solved, left, and a coloured mastery bar.</td></tr>
+            <tr><td><strong>Bottom strip</strong></td><td>Streak days, XP, and how many are due today.</td></tr>
+            <tr><td><strong>Search</strong></td><td>Searches stem, options, explanation and tags.</td></tr>
+          </tbody>
+        </table>
+
+        <div class="box note">
+          <div class="t">Why does it show 0% — or 40% after one right answer?</div>
+          <p>Mastery is not "percent solved", it is a rolling average. For the first five answers each response carries a 0.4 weight, so a single correct answer reads <strong>40%</strong> and climbs as answers accumulate. The number settles after about ten answers.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================== 4 -->
+    <section id="study">
+      <div class="lang-ar">
+        <h2><span class="num">٤</span> المذاكرة (Study)</h2>
+        <p class="sub">الوضع الهادئ: بلا مؤقت، مع شرح فوري بعد كل إجابة.</p>
+
+        <figure>
+          <div class="phone"><img src="screens/quiz.png" alt="شاشة المذاكرة"></div>
+          <figcaption>الشكل ٣ — <b>المذاكرة</b>: سؤال واحد في الشاشة، أربعة خيارات، والشرح ينتظر تحت الإجابة.</figcaption>
+        </figure>
+
+        <h3>ما يحدث عند كل ضغطة</h3>
+        <ul>
+          <li><strong>ضغط خيار</strong> يثبّت الإجابة ويُظهر الشرح فوراً — لا زر «تحقق» منفصل.</li>
+          <li>الإجابة الصحيحة تُلوّن أخضر والخاطئة أحمر، ويظهر الخيار الصحيح دائماً حتى لو لم تختره.</li>
+          <li>يُسجَّل للحظة الاختيار تقدير مبدئي <strong>medium</strong>، ثم تعدّله أنت بأزرار التقييم. الإجابة السريعة لا تعني أن السؤال سُجّل «سهل».</li>
+          <li>في وضع الامتحان لا يظهر أي شرح، ويُسجَّل السؤال عند التسليم فقط.</li>
+        </ul>
+
+        <h3>شريط الأدوات السفلي</h3>
+        <div class="scroll-x">
+          <table>
+            <thead><tr><th>الزر</th><th>الوظيفة</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Prev / Next</strong></td><td>التنقل بين الأسئلة دون فقدان الإجابات.</td></tr>
+              <tr><td><strong>Strike</strong></td><td>يشطب خياراً بخط أحمر (استبعاد) — الشطب لا يُحسب إجابة.</td></tr>
+              <tr><td><strong>Calc</strong></td><td>يفتح أدوات المختبر كاملة داخل الجلسة.</td></tr>
+              <tr><td><strong>Ranges</strong></td><td>جدول المدى الطبيعي السريع.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="box note">
+          <div class="t">أيقونة الصورة تظهر فقط عند وجود صورة</div>
+          <p>الأسئلة النصية لا تُظهر مربعاً فارغاً في مكان الصورة. الصور — 73 صورة — تظهر فقط في الأسئلة التي تملكها فعلاً.</p>
+        </div>
+      </div>
+
+      <div class="lang-en">
+        <h2><span class="num">04</span> Study mode</h2>
+        <p class="sub">The quiet mode: no clock, and an explanation the moment you answer.</p>
+
+        <figure>
+          <div class="phone"><img src="screens/quiz.png" alt="Study screen"></div>
+          <figcaption>Figure 3 — <b>Study</b>: one question per screen, four options, the explanation waiting underneath.</figcaption>
+        </figure>
+
+        <h3>What each tap does</h3>
+        <ul>
+          <li><strong>Tapping an option</strong> locks the answer and reveals the explanation immediately — there is no separate "check" button.</li>
+          <li>The correct option turns green, a wrong pick turns red, and the key is always shown even if you never chose it.</li>
+          <li>The moment of selection records a provisional <strong>medium</strong> grade; the grade buttons refine it. A fast answer does not mean the question was logged as "easy".</li>
+          <li>In exam mode no explanation appears, and nothing is recorded until you submit.</li>
+        </ul>
+
+        <h3>The bottom bar</h3>
+        <div class="scroll-x">
+          <table>
+            <thead><tr><th>Button</th><th>What it does</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Prev / Next</strong></td><td>Move between questions without losing answers.</td></tr>
+              <tr><td><strong>Strike</strong></td><td>Crosses out an option in red to eliminate it — a strike is never an answer.</td></tr>
+              <tr><td><strong>Calc</strong></td><td>Opens the full lab tools sheet inside the session.</td></tr>
+              <tr><td><strong>Ranges</strong></td><td>A quick reference-range table.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="box note">
+          <div class="t">The image frame only appears when there is an image</div>
+          <p>Text-only questions no longer show an empty image box. The 73 images appear only on the questions that actually own one.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================== 5 -->
+    <section id="explain">
+      <div class="lang-ar">
+        <h2><span class="num">٥</span> الشرح والتقييم</h2>
+        <p class="sub">هذا هو قلب التطبيق: لماذا صحّت الإجابة، ولماذا فشل كل خيار آخر.</p>
+
+        <figure>
+          <div class="phone"><img src="screens/explain.png" alt="شاشة الشرح"></div>
+          <figcaption>الشكل ٤ — <b>الشرح</b>: الإجابة، ثم سبب الصحة، ثم سبب خطأ كل بديل، ثم المرجع.</figcaption>
+        </figure>
+
+        <h3>أربع طبقات لكل شرح</h3>
+        <ol>
+          <li><strong>الإجابة الصحيحة</strong> مع سبب مختصر مبني على المبدأ لا على الحفظ.</li>
+          <li><strong>سبب خطأ كل خيار</strong> — وهذا ما يفرّق بين «أعرف الإجابة» و«أعرف لماذا». كل خيار من الثلاثة يُشرح منفصلاً.</li>
+          <li><strong>المرجع</strong>: كتاب وإصدار وفصل حيث توفر، أو «From LabCE …» أو «Based on ASCP BOC».</li>
+          <li><strong>تلميح المدى</strong> عند وجوده: المدى الطبيعي للتحليل داخل نفس السؤال.</li>
+        </ol>
+
+        <h3>ماذا يفعل زر التقييم؟</h3>
+        <div class="scroll-x">
+          <table>
+            <thead><tr><th>الزر</th><th>الفاصل القادم</th><th>معامل السهولة</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Again</strong></td><td>يوم واحد</td><td>−0.2</td></tr>
+              <tr><td><strong>Hard</strong></td><td>الدرجة السابقة بلا تقدّم</td><td>−0.05</td></tr>
+              <tr><td><strong>Good</strong></td><td>درجة واحدة في السلّم ١←٣←٧←١٤←٣٠</td><td>ثابت</td></tr>
+              <tr><td><strong>Easy</strong></td><td>الفاصل × معامل السهولة (بحد ٣٠ يوماً)</td><td>+0.1</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="box warn">
+          <div class="t">المحاولة الثانية نصف درجة</div>
+          <p>إن أعدت سؤالاً سبق أن أخطأت فيه، تُحسب الإجابة الصحيحة <strong>0.5</strong> بدل 1. هذا مقصود: تكرار السؤال حتى الحفظ لا يجب أن يساوي إتقاناً كاملاً من أول مرة.</p>
+        </div>
+
+        <div class="box note">
+          <div class="t">معامل السهولة محصور بين 1.3 و 3.0</div>
+          <p>لا يهبط المعامل تحت 1.3 مهما أخطأت، ولا يتجاوز 3.0 مهما تسارعت — حتى لا يخرج الجدول عن منطق المراجعة.</p>
+        </div>
+      </div>
+
+      <div class="lang-en">
+        <h2><span class="num">05</span> Explanation &amp; grading</h2>
+        <p class="sub">This is the heart of the app: why the key is right, and why each distractor fails.</p>
+
+        <figure>
+          <div class="phone"><img src="screens/explain.png" alt="Explanation screen"></div>
+          <figcaption>Figure 4 — <b>Explanation</b>: the answer, why it is right, why each distractor is wrong, then the reference.</figcaption>
+        </figure>
+
+        <h3>Four layers in every explanation</h3>
+        <ol>
+          <li><strong>The correct answer</strong> with a short reason built on the principle, not on recall.</li>
+          <li><strong>Why each wrong option fails</strong> — the part that separates "I know the answer" from "I know why". Each of the three distractors is addressed.</li>
+          <li><strong>The reference</strong>: book, edition and chapter where known, or a "From LabCE …" / "Based on ASCP BOC" citation.</li>
+          <li><strong>A range hint</strong> where one exists: the analyte's reference range inside the same question.</li>
+        </ol>
+
+        <h3>What the grade buttons do</h3>
+        <div class="scroll-x">
+          <table>
+            <thead><tr><th>Button</th><th>Next interval</th><th>Ease factor</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Again</strong></td><td>One day</td><td>−0.2</td></tr>
+              <tr><td><strong>Hard</strong></td><td>Same rung, no advance</td><td>−0.05</td></tr>
+              <tr><td><strong>Good</strong></td><td>One rung up the 1→3→7→14→30 ladder</td><td>unchanged</td></tr>
+              <tr><td><strong>Easy</strong></td><td>Interval × ease factor (capped at 30 days)</td><td>+0.1</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="box warn">
+          <div class="t">A second attempt scores half</div>
+          <p>Re-answering a question you previously missed earns <strong>0.5</strong> instead of 1. That is deliberate: repeating a question until it sticks should not equal first-time mastery.</p>
+        </div>
+
+        <div class="box note">
+          <div class="t">Ease is clamped between 1.3 and 3.0</div>
+          <p>It never falls below 1.3 however often you miss, and never exceeds 3.0 however fast you go — so the schedule keeps behaving like a review schedule.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================== 6 -->
+    <section id="mock">
+      <div class="lang-ar">
+        <h2><span class="num">٦</span> الامتحان التجريبي</h2>
+        <p class="sub">امتحان موزون مثل الامتحان الحقيقي، أو قسم واحد فقط — وأنت تختار.</p>
+
+        <figure>
+          <div class="phone"><img src="screens/mock.png" alt="إعداد الامتحان"></div>
+          <figcaption>الشكل ٥ — <b>إعداد الامتحان</b>: نوع الامتحان، العدد، والمؤقت قبل البدء.</figcaption>
+        </figure>
+
+        <h3>نوعان لا واحد</h3>
+        <ul>
+          <li><strong>ASCP mix</strong>: امتحان شامل يوزّع المقاعد على الأقسام الثمانية بأوزان المخطط، ثم يخلط الترتيب.</li>
+          <li><strong>Per-department</strong>: قسم واحد فقط، بعدد تختاره — مفيد قبل امتحان قسم.</li>
+        </ul>
+
+        <div class="scroll-x">
+          <table>
+            <thead><tr><th>القسم</th><th>الوزن</th><th>مقابل المخطط</th></tr></thead>
+            <tbody>
+              <tr><td>D1 هيماتولوجي</td><td><strong>20</strong></td><td>17–22%</td></tr>
+              <tr><td>D2 كيمياء وسوائل</td><td><strong>20</strong></td><td>17–22%</td></tr>
+              <tr><td>D3 بكتيريا وفطريات</td><td><strong>14</strong></td><td>جزء من 17–22%</td></tr>
+              <tr><td>D4 طفيليات/فيروسات/سل</td><td><strong>6</strong></td><td>بقية الميكروبيولوجي</td></tr>
+              <tr><td>D5 أنسجة وخلايا</td><td><strong>4</strong></td><td>—</td></tr>
+              <tr><td>D6 بنك دم</td><td><strong>20</strong></td><td>17–22%</td></tr>
+              <tr><td>D7 مناعة وجزيئات</td><td><strong>8</strong></td><td>5–10%</td></tr>
+              <tr><td>D8 ضبط جودة وسلامة</td><td><strong>8</strong></td><td>5–10%</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="sub" style="margin-top:14px">إن لم يكفِ قسمٌ ما لتغطية حصته، يُعاد توزيع المقاعد الزائدة على الأقسام التي ما زال لديها أسئلة متاحة — لا تُلغى الأسئلة ولا يُختصر الامتحان.</p>
+
+        <h3>المؤقت: ثلاثة أوضاع</h3>
+        <div class="scroll-x">
+          <table>
+            <thead><tr><th>الوضع</th><th>السلوك</th></tr></thead>
+            <tbody>
+              <tr><td><span class="badge b-un">OFF</span></td><td>لا مؤقت. الوقت يُقاس للتحليل فقط.</td></tr>
+              <tr><td><span class="badge b-warn">SOFT</span></td><td>ينبّه عند الصفر ويستمر — التسليم بيدك.</td></tr>
+              <tr><td><span class="badge b-gen">HARD</span></td><td>يسلّم تلقائياً عند الصفر وينقلك للنتيجة.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="box note">
+          <div class="t">حد النجاح 65%</div>
+          <p>هذا الحد هو معيار القبول في المشروع نفسه، ويمكنك تغييره من منطق الجلسة لا من الواجهة. الأهم أن ترى الفرق بين «قريب» و«جاهز».</p>
+        </div>
+      </div>
+
+      <div class="lang-en">
+        <h2><span class="num">06</span> Mock exam</h2>
+        <p class="sub">A weighted exam like the real thing, or one department only — your call.</p>
+
+        <figure>
+          <div class="phone"><img src="screens/mock.png" alt="Exam setup"></div>
+          <figcaption>Figure 5 — <b>Exam setup</b>: exam type, question count, timer, before you start.</figcaption>
+        </figure>
+
+        <h3>Two modes, not one</h3>
+        <ul>
+          <li><strong>ASCP mix</strong>: a comprehensive exam that distributes slots across the eight departments by outline weight, then shuffles the order.</li>
+          <li><strong>Per-department</strong>: one department only, at a count you choose — useful before a departmental exam.</li>
+        </ul>
+
+        <div class="scroll-x">
+          <table>
+            <thead><tr><th>Department</th><th>Weight</th><th>Against the outline</th></tr></thead>
+            <tbody>
+              <tr><td>D1 Hematology</td><td><strong>20</strong></td><td>17–22%</td></tr>
+              <tr><td>D2 Chemistry &amp; fluids</td><td><strong>20</strong></td><td>17–22%</td></tr>
+              <tr><td>D3 Bacteriology &amp; mycology</td><td><strong>14</strong></td><td>part of 17–22%</td></tr>
+              <tr><td>D4 Parasitology/virology/TB</td><td><strong>6</strong></td><td>rest of microbiology</td></tr>
+              <tr><td>D5 Histology &amp; cytology</td><td><strong>4</strong></td><td>—</td></tr>
+              <tr><td>D6 Blood bank</td><td><strong>20</strong></td><td>17–22%</td></tr>
+              <tr><td>D7 Immunology &amp; molecular</td><td><strong>8</strong></td><td>5–10%</td></tr>
+              <tr><td>D8 QC &amp; safety</td><td><strong>8</strong></td><td>5–10%</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="sub" style="margin-top:14px">If a department cannot fill its quota, the spare slots are redistributed to departments that still have questions available — questions are never dropped and the exam is never shortened.</p>
+
+        <h3>The timer: three modes</h3>
+        <div class="scroll-x">
+          <table>
+            <thead><tr><th>Mode</th><th>Behaviour</th></tr></thead>
+            <tbody>
+              <tr><td><span class="badge b-un">OFF</span></td><td>No clock. Elapsed time is still measured for analytics.</td></tr>
+              <tr><td><span class="badge b-warn">SOFT</span></td><td>Warns at zero and keeps going — you decide when to submit.</td></tr>
+              <tr><td><span class="badge b-gen">HARD</span></td><td>Submits automatically at zero and moves you to the result.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="box note">
+          <div class="t">Pass mark is 65%</div>
+          <p>That is the project's own acceptance criterion, and it is defined in session logic rather than in the UI. What matters is telling "close" apart from "ready".</p>
+        </div>
+      </div>
+    </section>
+    <!-- ======================================================== 7 -->
+    <section id="palette">
+      <div class="lang-ar">
+        <h2><span class="num">٧</span> لوحة الأسئلة</h2>
+        <p class="sub">خريطة الجلسة: أين أنت، وما تركته، وما علّمته للمراجعة.</p>
+
+        <figure>
+          <div class="phone"><img src="screens/palette.png" alt="لوحة الأسئلة"></div>
+          <figcaption>الشكل ٦ — <b>اللوحة</b>: كل مربّع سؤال، ولونه يقول حالته قبل أن تضغطه.</figcaption>
+        </figure>
+
+        <h3>الألوان والحالات</h3>
+        <div class="scroll-x">
+          <table>
+            <thead><tr><th>الحالة</th><th>معناها</th></tr></thead>
+            <tbody>
+              <tr><td><span class="badge b-gen">أبيض</span></td><td>السؤال الذي تقف عليه الآن.</td></tr>
+              <tr><td><span class="badge b-teal">فيروزي</span></td><td>أُجيب عنه في هذه الجلسة.</td></tr>
+              <tr><td><span class="badge b-ok">أخضر</span></td><td>أُجيب عنه سابقاً (من جلسات أخرى).</td></tr>
+              <tr><td><span class="badge b-warn">ذهبي</span></td><td>معلّم للمراجعة.</td></tr>
+              <tr><td><span class="badge b-un">رمادي متقطّع</span></td><td>تم تخطّيه.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>الشرائح أعلى اللوحة تُصفّي العرض: <strong>all / flagged / skipped / answered</strong> مع العدّاد لكل حالة. التصفية تُخفي الأسئلة من العرض فقط — لا تحذف إجابة ولا تغيّر الترتيب.</p>
+
+        <div class="box note">
+          <div class="t">التسليم من اللوحة</div>
+          <p>زر <strong>Submit</strong> يسلّم الجلسة ويحسب النتيجة. في وضع HARD قد لا تصل إلى اللوحة أصلاً لأن المؤقت يسلّم قبل ذلك.</p>
+        </div>
+      </div>
+
+      <div class="lang-en">
+        <h2><span class="num">07</span> Question palette</h2>
+        <p class="sub">A map of the session: where you are, what you skipped, what you flagged.</p>
+
+        <figure>
+          <div class="phone"><img src="screens/palette.png" alt="Question palette"></div>
+          <figcaption>Figure 6 — <b>Palette</b>: one square per question, and the colour states its status before you tap it.</figcaption>
+        </figure>
+
+        <h3>Colours and states</h3>
+        <div class="scroll-x">
+          <table>
+            <thead><tr><th>State</th><th>Meaning</th></tr></thead>
+            <tbody>
+              <tr><td><span class="badge b-gen">White</span></td><td>The question you are on right now.</td></tr>
+              <tr><td><span class="badge b-teal">Teal</span></td><td>Answered in this session.</td></tr>
+              <tr><td><span class="badge b-ok">Green</span></td><td>Answered before, in an earlier session.</td></tr>
+              <tr><td><span class="badge b-warn">Gold</span></td><td>Flagged for review.</td></tr>
+              <tr><td><span class="badge b-un">Grey dashed</span></td><td>Skipped.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>The chips above the grid filter the view: <strong>all / flagged / skipped / answered</strong>, each with a count. Filtering only hides questions from the grid — it deletes no answer and reorders nothing.</p>
+
+        <div class="box note">
+          <div class="t">Submitting from the palette</div>
+          <p><strong>Submit</strong> closes the session and scores it. In HARD mode you may never reach the palette, because the timer submits first.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================== 8 -->
+    <section id="result">
+      <div class="lang-ar">
+        <h2><span class="num">٨</span> شاشة النتيجة</h2>
+        <p class="sub">الرقم وحده لا يكفي — هذه الشاشة تقول لك أين تخسر.</p>
+
+        <figure>
+          <div class="phone"><img src="screens/result.png" alt="شاشة النتيجة"></div>
+          <figcaption>الشكل ٧ — <b>النتيجة</b>: النسبة، النجاح أو الرسوب، ثم الأداء حسب القسم في هذه الجلسة.</figcaption>
+        </figure>
+
+        <ul>
+          <li><strong>الحلقة الكبيرة</strong> هي نسبتك، وتحت الرقم حالة النجاح (65% وما فوق).</li>
+          <li><strong>الأرقام الثلاثة</strong>: الصحيح، متوسط الثواني لكل سؤال، وعدد الأخطاء.</li>
+          <li><strong>الأداء حسب القسم</strong> يُحسب من هذه الجلسة فقط — لا يخلط مع تاريخك القديم.</li>
+          <li><strong>المستحق غداً</strong> يخبرك بما سيراكم إن أهملت اليوم.</li>
+          <li><strong>Weak topics</strong> تعرض الموضوعات التي أخطأت فيها أكثر من مرة.</li>
+        </ul>
+
+        <div class="box note">
+          <div class="t">كل تسليم يُسجَّل مرة واحدة</div>
+          <p>الجلسة تُسجَّل في سجل المحاولات مرة واحدة فقط — إعادة فتح شاشة النتيجة لا تُضاعف المحاولة ولا تُفسد متوسط توقع النجاح.</p>
+        </div>
+
+        <div class="box warn">
+          <div class="t">زر «امتحان شامل جديد» يبدأ فوراً</div>
+          <p>لا يعيد فتح إعداد الامتحان؛ يستخدم الإعدادات الأخيرة. إن أردت تغيير العدد أو المؤقت، ابدأ من الرئيسية.</p>
+        </div>
+      </div>
+
+      <div class="lang-en">
+        <h2><span class="num">08</span> Result screen</h2>
+        <p class="sub">The number alone is not enough — this screen tells you where you are losing marks.</p>
+
+        <figure>
+          <div class="phone"><img src="screens/result.png" alt="Result screen"></div>
+          <figcaption>Figure 7 — <b>Result</b>: the score, pass or fail, then per-department performance for this session.</figcaption>
+        </figure>
+
+        <ul>
+          <li><strong>The big ring</strong> is your percentage, with pass state underneath (65% and above).</li>
+          <li><strong>The three figures</strong>: correct, average seconds per question, mistakes.</li>
+          <li><strong>Per-department</strong> is computed from this session only — it is not mixed with your history.</li>
+          <li><strong>Due tomorrow</strong> shows what will pile up if you skip today.</li>
+          <li><strong>Weak topics</strong> lists the topics you missed more than once.</li>
+        </ul>
+
+        <div class="box note">
+          <div class="t">Each submit is recorded once</div>
+          <p>A session is written to the attempt log exactly once — reopening the result screen does not duplicate the attempt or distort the pass-prediction average.</p>
+        </div>
+
+        <div class="box warn">
+          <div class="t">"New mock exam" starts immediately</div>
+          <p>It does not reopen the setup sheet; it reuses your last settings. If you want a different count or timer, start from Home.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================== 9 -->
+    <section id="library">
+      <div class="lang-ar">
+        <h2><span class="num">٩</span> المحفوظات والأخطاء والملاحظات</h2>
+        <p class="sub">ثلاثة صناديق تحت سقف واحد، وكلها محفوظة على الجهاز.</p>
+
+        <figure>
+          <div class="phone"><img src="screens/library.png" alt="المحفوظات"></div>
+          <figcaption>الشكل ٨ — <b>Library</b>: تبويبات المحفوظات والأخطاء والملاحظات.</figcaption>
+        </figure>
+
+        <div class="scroll-x">
+          <table>
+            <thead><tr><th>التبويب</th><th>ما يدخله</th><th>ما يمكنك فعله</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Bookmarks</strong></td><td>ما حفظته يدوياً بأيقونة الحفظ</td><td>اسحب لحذف عنصر، أو ابدأ مراجعة المجموعة</td></tr>
+              <tr><td><strong>Mistakes</strong></td><td>كل سؤال أخطأت فيه، تلقائياً</td><td><strong>Start review</strong> يبني جلسة من الأخطاء وحدها</td></tr>
+              <tr><td><strong>Notes</strong></td><td>ملاحظاتك الحرة على أي سؤال</td><td>بحث داخلها، ونسخ إلى الحافظة</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="box note">
+          <div class="t">الملاحظات خاصة</div>
+          <p>الملاحظات تُخزَّن محلياً على جهازك، ولا تُرفع إلى السحابة. لا يوجد مشاركة ولا تصدير تلقائي — التصدير الوحيد هو النسخ اليدوي إلى الحافظة.</p>
+        </div>
+
+        <div class="box warn">
+          <div class="t">مسح المكتبة لا يمسّ تقدّمك</div>
+          <p>«Clear bookmarks &amp; notes» يمسح هذه القوائم فقط. جدول المراجعة ونسب الإتقان تبقى كما هي، وتُمسح من زر مستقل في الإعدادات.</p>
+        </div>
+      </div>
+
+      <div class="lang-en">
+        <h2><span class="num">09</span> Bookmarks, mistakes, notes</h2>
+        <p class="sub">Three boxes under one roof, all stored on the device.</p>
+
+        <figure>
+          <div class="phone"><img src="screens/library.png" alt="Library"></div>
+          <figcaption>Figure 8 — <b>Library</b>: bookmarks, mistakes and notes as tabs.</figcaption>
+        </figure>
+
+        <div class="scroll-x">
+          <table>
+            <thead><tr><th>Tab</th><th>What lands there</th><th>What you can do</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Bookmarks</strong></td><td>What you saved by hand with the bookmark icon</td><td>Swipe to delete, or review the whole set</td></tr>
+              <tr><td><strong>Mistakes</strong></td><td>Every question you missed, automatically</td><td><strong>Start review</strong> builds a session from mistakes only</td></tr>
+              <tr><td><strong>Notes</strong></td><td>Your free-text notes on any question</td><td>Search inside them, copy to clipboard</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="box note">
+          <div class="t">Notes are private</div>
+          <p>Notes are stored locally on your device and are never uploaded. There is no sharing and no automatic export — the only export is manual copy to the clipboard.</p>
+        </div>
+
+        <div class="box warn">
+          <div class="t">Clearing the library does not touch progress</div>
+          <p>"Clear bookmarks &amp; notes" clears only these lists. Your review schedule and mastery percentages survive; they are cleared by a separate button in Settings.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================== 10 -->
+    <section id="search">
+      <div class="lang-ar">
+        <h2><span class="num">١٠</span> البحث</h2>
+        <p class="sub">تبحث في كل شيء، ثم تدرس ما وجدته كجلسة.</p>
+
+        <figure>
+          <div class="phone"><img src="screens/search.png" alt="البحث"></div>
+          <figcaption>الشكل ٩ — <b>البحث</b>: نتائج من نص السؤال والخيارات والشرح والوسوم.</figcaption>
+        </figure>
+
+        <p>أربع نطاقات للبحث: <strong>Everything</strong> (الكل)، <strong>Stem</strong> (نص السؤال)، <strong>Explanation</strong> (الشرح)، <strong>Tags</strong> (الوسوم والموضوعات). النطاق يقلّل الضجيج: البحث عن «glucose» في الشرح يعطي نتيجة مختلفة عن البحث عنه في نص السؤال.</p>
+
+        <div class="box note">
+          <div class="t">من النتيجة إلى الجلسة</div>
+          <p>زر <strong>Study these</strong> يحوّل نتائج البحث إلى جلسة مذاكرة كاملة — نفس المحرك، ونفس الشرح، ونفس جدول المراجعة.</p>
+        </div>
+
+        <div class="box warn">
+          <div class="t">لا نتائج؟</div>
+          <p>البنك مكتوب بإنجليزية أكاديمية، لذا ابحث بالجذر: <code>hemoly</code> بدل <code>hemolysis</code>، و<code>anem</code> بدل <code>anemia</code>. جرّب أيضاً نطاق الشرح قبل الحكم بأن السؤال غير موجود.</p>
+        </div>
+      </div>
+
+      <div class="lang-en">
+        <h2><span class="num">10</span> Search</h2>
+        <p class="sub">Search everything, then study what you found as a session.</p>
+
+        <figure>
+          <div class="phone"><img src="screens/search.png" alt="Search"></div>
+          <figcaption>Figure 9 — <b>Search</b>: results from the stem, options, explanation and tags.</figcaption>
+        </figure>
+
+        <p>Four scopes: <strong>Everything</strong>, <strong>Stem</strong>, <strong>Explanation</strong>, <strong>Tags</strong>. The scope cuts noise: searching "glucose" in explanations gives a different set from searching it in stems.</p>
+
+        <div class="box note">
+          <div class="t">From results to a session</div>
+          <p><strong>Study these</strong> turns the result set into a full study session — same engine, same explanations, same review schedule.</p>
+        </div>
+
+        <div class="box warn">
+          <div class="t">No results?</div>
+          <p>The bank is written in academic English, so search the root: <code>hemoly</code> rather than <code>hemolysis</code>, <code>anem</code> rather than <code>anemia</code>. Try the explanation scope too before concluding a question is missing.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================== 11 -->
+    <section id="filter">
+      <div class="lang-ar">
+        <h2><span class="num">١١</span> فلترة الأسئلة</h2>
+        <p class="sub">ابنِ مجموعتك: قسم، صعوبة، صور، ولم تُحل، وأخطأت فيها.</p>
+
+        <figure>
+          <div class="phone"><img src="screens/filter.png" alt="فلترة الأسئلة"></div>
+          <figcaption>الشكل ١٠ — <b>الفلاتر</b>: العدّاد أسفل الشاشة يتحدّث مع كل شريحة تختارها.</figcaption>
+        </figure>
+
+        <div class="scroll-x">
+          <table>
+            <thead><tr><th>الفلاتر</th><th>القيم</th></tr></thead>
+            <tbody>
+              <tr><td>القسم</td><td>كل الأقسام أو قسم واحد</td></tr>
+              <tr><td>الصعوبة</td><td>سهل · متوسط · بورد</td></tr>
+              <tr><td>المحتوى</td><td>بها صورة · لم تُحل · أخطأت فيها · محفوظة</td></tr>
+              <tr><td>الموضوع الفرعي</td><td>أي موضوع، أو موضوع محدد</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>الفلاتر تُجمع معاً بـ«و»: قسم D1 + صعوبة بورد + أخطأت فيها = فقط تلك الأسئلة. العدد الظاهر قبل البدء هو عدد ما ستحصل عليه فعلاً.</p>
+
+        <div class="box note">
+          <div class="t">مذاكرة أم امتحان؟</div>
+          <p>نفس المجموعة المفلترة تعمل في الوضعين: <strong>Start study</strong> يشرح بعد كل إجابة، و<strong>Start exam</strong> يصمت حتى التسليم.</p>
+        </div>
+      </div>
+
+      <div class="lang-en">
+        <h2><span class="num">11</span> Filter builder</h2>
+        <p class="sub">Build your own set: department, difficulty, images, unseen, missed.</p>
+
+        <figure>
+          <div class="phone"><img src="screens/filter.png" alt="Filter builder"></div>
+          <figcaption>Figure 10 — <b>Filters</b>: the counter at the bottom updates with every chip you pick.</figcaption>
+        </figure>
+
+        <div class="scroll-x">
+          <table>
+            <thead><tr><th>Filter</th><th>Values</th></tr></thead>
+            <tbody>
+              <tr><td>Department</td><td>All departments or one</td></tr>
+              <tr><td>Difficulty</td><td>Easy · Medium · Board</td></tr>
+              <tr><td>Content</td><td>Has image · Unseen · Wrong before · Bookmarked</td></tr>
+              <tr><td>Subtopic</td><td>Any subtopic, or one specific topic</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>Filters combine with AND: D1 + board + wrong before gives only those questions. The count shown before you start is exactly what you will get.</p>
+
+        <div class="box note">
+          <div class="t">Study or exam?</div>
+          <p>The same filtered set works in both modes: <strong>Start study</strong> explains after each answer, <strong>Start exam</strong> stays silent until submit.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================== 12 -->
+    <section id="analytics">
+      <div class="lang-ar">
+        <h2><span class="num">١٢</span> الإحصاءات</h2>
+        <p class="sub">الدرجة مع الوقت، والإتقان حسب القسم، وتوقّع النجاح.</p>
+
+        <figure>
+          <div class="phone"><img src="screens/analytics.png" alt="الإحصاءات"></div>
+          <figcaption>الشكل ١١ — <b>Analytics</b>: منحنى الدرجات، توقّع النجاح، والإتقان لكل قسم.</figcaption>
+        </figure>
+
+        <h3>كيف يُحسب توقّع النجاح؟</h3>
+        <p>ليس متوسطاً لكل محاولاتك، بل <strong>متوسط مرجّح لآخر ثلاث محاولات لكل قسم</strong>. المحاولة الأحدث تزن أكثر، لأن مستواك اليوم أهم من مستواك قبل شهر. لذلك قد ينخفض التوقع بعد محاولة سيئة واحدة — وهذا هو المقصود.</p>
+
+        <div class="scroll-x">
+          <table>
+            <thead><tr><th>المؤشر</th><th>من أين يأتي</th></tr></thead>
+            <tbody>
+              <tr><td>Score over time</td><td>نسبة كل امتحان مسجّل، بالترتيب الزمني</td></tr>
+              <tr><td>Pass prediction</td><td>متوسط مرجّح لآخر 3 محاولات</td></tr>
+              <tr><td>Dept mastery</td><td>من بطاقات SM-2 لكل قسم</td></tr>
+              <tr><td>Avg sec / Q</td><td>زمن الجلسة ÷ عدد الأسئلة</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="box warn">
+          <div class="t">لا محاولات = لا إحصاءات</div>
+          <p>الشاشة تظهر «لا محاولات بعد — ابدأ امتحاناً» حتى تُسلّم أول امتحان. المذاكرة وحدها لا تُدخل هنا؛ هذا السجل للامتحانات الموقوتة والمسلّمة.</p>
+        </div>
+      </div>
+
+      <div class="lang-en">
+        <h2><span class="num">12</span> Analytics</h2>
+        <p class="sub">Score over time, mastery by department, and a pass prediction.</p>
+
+        <figure>
+          <div class="phone"><img src="screens/analytics.png" alt="Analytics"></div>
+          <figcaption>Figure 11 — <b>Analytics</b>: the score curve, the pass prediction, and per-department mastery.</figcaption>
+        </figure>
+
+        <h3>How pass prediction is computed</h3>
+        <p>It is not the average of all your attempts. It is a <strong>weighted average of the last three attempts per department</strong>, with the most recent weighing most — where you are today matters more than where you were a month ago. So one bad mock can drop it, which is the point.</p>
+
+        <div class="scroll-x">
+          <table>
+            <thead><tr><th>Metric</th><th>Where it comes from</th></tr></thead>
+            <tbody>
+              <tr><td>Score over time</td><td>Each recorded exam score, in order</td></tr>
+              <tr><td>Pass prediction</td><td>Weighted average of the last 3 attempts</td></tr>
+              <tr><td>Dept mastery</td><td>From the SM-2 cards of that department</td></tr>
+              <tr><td>Avg sec / Q</td><td>Session time ÷ questions</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="box warn">
+          <div class="t">No attempts, no analytics</div>
+          <p>The screen reads "No attempts yet — run a mock" until you submit your first exam. Study sessions alone do not appear here; this log is for submitted, timed exams.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================== 13 -->
+    <section id="tools">
+      <div class="lang-ar">
+        <h2><span class="num">١٣</span> أدوات المختبر</h2>
+        <p class="sub">أربع أدوات حسابية داخل التطبيق — بلا ورق ولا آلة حاسبة خارجية.</p>
+
+        <figure>
+          <div class="phone"><img src="screens/tools.png" alt="أدوات المختبر"></div>
+          <figcaption>الشكل ١٢ — <b>Lab tools</b>: المدى الطبيعي، تحويل SI، التخفيف، و PT/INR.</figcaption>
+        </figure>
+
+        <div class="scroll-x">
+          <table>
+            <thead><tr><th>الأداة</th><th>ما تحسبه</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Ranges</strong></td><td>المدى الطبيعي لتحاليل الهيماتولوجي والكيمياء والسوائل.</td></tr>
+              <tr><td><strong>SI converter</strong></td><td>تحويل 14 تحليلاً بين الوحدات التقليدية ووحدات SI.</td></tr>
+              <tr><td><strong>Dilution</strong></td><td>قانون C1V1 = C2V2 لأي تخفيف.</td></tr>
+              <tr><td><strong>PT/INR</strong></td><td>INR = (PT ÷ MNPT)<sup>ISI</sup> مع تفسير النطاق العلاجي.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>الأدوات تُفتح من مكانين: من الرئيسية، ومن زر <strong>Calc</strong> داخل شريط السؤال — دون فقدان إجابتك أو موقعك.</p>
+
+        <div class="box note">
+          <div class="t">لماذا PT/INR داخل التطبيق؟</div>
+          <p>لأن نصف أسئلة التجلّط تنتهي بحساب INR. وجود الأداة في نفس الشاشة يعني أنك تحسب وتتحقق دون أن تترك السؤال — وهذا يقلّل الوقت الضائع ويحفظ سياق الحالة.</p>
+        </div>
+
+        <div class="box warn">
+          <div class="t">الأرقام للتدريب لا للتقرير</div>
+          <p>المدى الطبيعي يختلف بين المعامل والأجهزة. لا تستخدم هذه الأرقام في تقرير مخبري حقيقي؛ ارجع دائماً إلى مدى معملك المعتمد.</p>
+        </div>
+      </div>
+
+      <div class="lang-en">
+        <h2><span class="num">13</span> Lab tools</h2>
+        <p class="sub">Four calculators inside the app — no paper, no external calculator.</p>
+
+        <figure>
+          <div class="phone"><img src="screens/tools.png" alt="Lab tools"></div>
+          <figcaption>Figure 12 — <b>Lab tools</b>: reference ranges, SI conversion, dilution, and PT/INR.</figcaption>
+        </figure>
+
+        <div class="scroll-x">
+          <table>
+            <thead><tr><th>Tool</th><th>What it computes</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Ranges</strong></td><td>Reference ranges for hematology, chemistry and fluids.</td></tr>
+              <tr><td><strong>SI converter</strong></td><td>Converts 14 analytes between conventional and SI units.</td></tr>
+              <tr><td><strong>Dilution</strong></td><td>C1V1 = C2V2 for any dilution.</td></tr>
+              <tr><td><strong>PT/INR</strong></td><td>INR = (PT ÷ MNPT)<sup>ISI</sup> with a therapeutic-range readout.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>The sheet opens from two places: Home, and the <strong>Calc</strong> button in the question bar — without losing your answer or your place.</p>
+
+        <div class="box note">
+          <div class="t">Why PT/INR belongs here</div>
+          <p>Because half of the coagulation questions end in an INR calculation. Having the tool on the same screen means you compute and verify without leaving the question — less time lost, and the case context stays intact.</p>
+        </div>
+
+        <div class="box warn">
+          <div class="t">These numbers are for practice, not for reporting</div>
+          <p>Reference ranges differ between labs and platforms. Never use these figures in a real lab report; always use your own laboratory's validated range.</p>
+        </div>
+      </div>
+    </section>
+    <!-- ======================================================== 14 -->
+    <section id="settings">
+      <div class="lang-ar">
+        <h2><span class="num">١٤</span> الإعدادات</h2>
+        <p class="sub">المظهر، حجم الخط، اللغة، التذكير، ومسح البيانات — كلها في شاشة واحدة.</p>
+
+        <figure>
+          <div class="phone"><img src="screens/settings.png" alt="الإعدادات"></div>
+          <figcaption>الشكل ١٣ — <b>الإعدادات</b>: الوضع الداكن مفعّل افتراضياً، وحجم الخط قابل للزيادة خطوة بخطوة.</figcaption>
+        </figure>
+
+        <div class="scroll-x">
+          <table>
+            <thead><tr><th>الخيار</th><th>ما يفعله</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Dark mode</strong></td><td>يبدّل المظهر. الصور المجهرية لا تتغيّر ألوانها — تبقى كما صُوّرت.</td></tr>
+              <tr><td><strong>Font size</strong></td><td>من A− إلى A+ بخطوات 10%، ويُحفظ بين الجلسات.</td></tr>
+              <tr><td><strong>Offline packs</strong></td><td>لا شيء لتنزيله: 2402 سؤالاً و73 صورة داخل التطبيق.</td></tr>
+              <tr><td><strong>Daily reminder</strong></td><td>إشعار محلي واحد يومياً. يحتاج إذن الإشعارات مرة واحدة.</td></tr>
+              <tr><td><strong>Language</strong></td><td>عربي/إنجليزي للواجهة فقط، والاتجاه ينقلب تلقائياً.</td></tr>
+              <tr><td><strong>Admin CMS</strong></td><td>يفتح إدارة المحتوى (تحتاج مفتاح خدمة).</td></tr>
+              <tr><td><strong>Reset progress</strong></td><td>يمسح جدول المراجعة والإتقان والـ XP.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>الوضع الفاتح</h3>
+        <figure>
+          <div class="phone"><img src="screens/light.png" alt="الوضع الفاتح"></div>
+          <figcaption>الشكل ١٤ — <b>الوضع الفاتح</b>: نفس البنية، وألوان الأقسام تبقى مقروءة.</figcaption>
+        </figure>
+
+        <div class="box note">
+          <div class="t">التغيير يسري فوراً</div>
+          <p>لا حاجة لإعادة تشغيل التطبيق: المظهر وحجم الخط واللغة تُطبّق مباشرة وتُحفظ في الجهاز.</p>
+        </div>
+
+        <div class="box danger">
+          <div class="t">الأزرار الحمراء لا تُستعاد</div>
+          <p><strong>Reset progress</strong> و<strong>Clear attempt history</strong> لا يمكن التراجع عنهما. إن كنت تريد الاحتفاظ بتقدّمك، لا تمسحهما قبل مزامنة الحساب.</p>
+        </div>
+      </div>
+
+      <div class="lang-en">
+        <h2><span class="num">14</span> Settings</h2>
+        <p class="sub">Appearance, font size, language, reminders and data reset — on one screen.</p>
+
+        <figure>
+          <div class="phone"><img src="screens/settings.png" alt="Settings"></div>
+          <figcaption>Figure 13 — <b>Settings</b>: dark mode is on by default, and font size steps in 10% increments.</figcaption>
+        </figure>
+
+        <div class="scroll-x">
+          <table>
+            <thead><tr><th>Option</th><th>What it does</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Dark mode</strong></td><td>Switches the theme. Microscopy images keep their original colours — they are never tinted.</td></tr>
+              <tr><td><strong>Font size</strong></td><td>A− to A+ in 10% steps, persisted between sessions.</td></tr>
+              <tr><td><strong>Offline packs</strong></td><td>Nothing to download: 2,402 questions and 73 images ship inside the app.</td></tr>
+              <tr><td><strong>Daily reminder</strong></td><td>One local notification per day. Needs notification permission once.</td></tr>
+              <tr><td><strong>Language</strong></td><td>Arabic/English for the chrome only; text direction flips automatically.</td></tr>
+              <tr><td><strong>Admin CMS</strong></td><td>Opens content management (needs a service key).</td></tr>
+              <tr><td><strong>Reset progress</strong></td><td>Clears the review schedule, mastery and XP.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Light mode</h3>
+        <figure>
+          <div class="phone"><img src="screens/light.png" alt="Light mode"></div>
+          <figcaption>Figure 14 — <b>Light mode</b>: same structure, and the department colours stay readable.</figcaption>
+        </figure>
+
+        <div class="box note">
+          <div class="t">Changes apply immediately</div>
+          <p>No restart needed: theme, font size and language apply at once and are saved on the device.</p>
+        </div>
+
+        <div class="box danger">
+          <div class="t">The red buttons are irreversible</div>
+          <p><strong>Reset progress</strong> and <strong>Clear attempt history</strong> cannot be undone. If you want to keep your progress, do not clear them before your account has synced.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================== 15 -->
+    <section id="account">
+      <div class="lang-ar">
+        <h2><span class="num">١٥</span> الحساب والمزامنة</h2>
+        <p class="sub">الحساب اختياري للدراسة، ومفيد لئلا تفقد تقدّمك.</p>
+
+        <h3>ما الذي يُزامَن؟</h3>
+        <ul>
+          <li><strong>المحتوى</strong>: التحديثات الجديدة للبنك تُسحب عند توفّرها.</li>
+          <li><strong>بطاقات المراجعة</strong>: تُدفع وتُسحب، فالجدول يبقى واحداً على كل أجهزتك.</li>
+          <li><strong>سلسلة الأيام</strong>: تُنسخ إلى حسابك حتى لا تُصفّر بتغيير الجهاز.</li>
+        </ul>
+        <p>المزامنة تحدث عند الدخول، وعند كل زيارة للرئيسية — أي بعد كل إجابة تُقيّمها تقريباً، دون انتظار تسجيل خروج.</p>
+
+        <div class="scroll-x">
+          <table>
+            <thead><tr><th>الحالة</th><th>ما يحدث</th></tr></thead>
+            <tbody>
+              <tr><td>بلا إنترنت</td><td>كل شيء يعمل؛ الطلبات تُترك بلا فشل ظاهر وتُعاد لاحقاً.</td></tr>
+              <tr><td>بريد غير مؤكد</td><td>الدخول يوقفك على شاشة الرمز، مع زر إعادة إرسال.</td></tr>
+              <tr><td>نسيت كلمة السر</td><td>رمز من ستة أرقام إلى بريدك، ثم كلمة سر جديدة — دون مغادرة التطبيق.</td></tr>
+              <tr><td>حسابان على جهاز واحد</td><td>تسجيل الخروج يمسح الجلسة لا التقدّم المحلي.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="box note">
+          <div class="t">«الأفضل جهداً» ليست كلمة تسويقية</div>
+          <p>إذا فشلت المزامنة لسبب شبكي، التطبيق لا يعطّل المذاكرة ولا يمسح بياناتك. الطلب يُعاد في الزيارة التالية للرئيسية.</p>
+        </div>
+
+        <div class="box warn">
+          <div class="t">إن كان مشروع السحابة موقوفاً</div>
+          <p>مشاريع الطبقة المجانية تُوقف تلقائياً بعد خمول. حينها ترفض الخدمة الطلبات، ويظهر خطأ واضح في الإدارة. الدراسة المحلية تبقى تعمل بالكامل.</p>
+        </div>
+      </div>
+
+      <div class="lang-en">
+        <h2><span class="num">15</span> Account &amp; sync</h2>
+        <p class="sub">An account is optional for studying, and useful so you never lose progress.</p>
+
+        <h3>What syncs</h3>
+        <ul>
+          <li><strong>Content</strong>: new bank revisions are pulled when available.</li>
+          <li><strong>Review cards</strong>: pushed and pulled, so the schedule is the same on every device.</li>
+          <li><strong>Streak</strong>: mirrored to your account so a device change does not reset it.</li>
+        </ul>
+        <p>Sync runs at sign-in and on every visit to Home — in practice after each graded answer, without waiting for a sign-out.</p>
+
+        <div class="scroll-x">
+          <table>
+            <thead><tr><th>Situation</th><th>What happens</th></tr></thead>
+            <tbody>
+              <tr><td>No connection</td><td>Everything works; requests are skipped quietly and retried later.</td></tr>
+              <tr><td>Email unconfirmed</td><td>Sign-in stops at the code screen, with a resend button.</td></tr>
+              <tr><td>Forgot password</td><td>A six-digit code to your inbox, then a new password — without leaving the app.</td></tr>
+              <tr><td>Two accounts, one device</td><td>Signing out clears the session, not your local progress.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="box note">
+          <div class="t">"Best effort" is not marketing language</div>
+          <p>If a sync fails for a network reason, the app neither blocks studying nor wipes your data. The request is retried on the next Home visit.</p>
+        </div>
+
+        <div class="box warn">
+          <div class="t">If the cloud project is paused</div>
+          <p>Free-tier projects pause after inactivity. The service then rejects requests and the admin shows a clear error. Local studying keeps working in full.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================== 16 -->
+    <section id="admin">
+      <div class="lang-ar">
+        <h2><span class="num">١٦</span> إدارة المحتوى</h2>
+        <p class="sub">شاشة للمشرف، لا للطالب — تفتح بمفتاح خدمة يُدخل في اللحظة ولا يُحفظ.</p>
+
+        <figure>
+          <div class="phone"><img src="screens/admin.png" alt="إدارة المحتوى"></div>
+          <figcaption>الشكل ١٥ — <b>Admin CMS</b>: لوحة، أسئلة، استيراد، ومستخدمون.</figcaption>
+        </figure>
+
+        <div class="scroll-x">
+          <table>
+            <thead><tr><th>التبويب</th><th>ما يمكنك فعله</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Dashboard</strong></td><td>الإجماليات، المنشور والمسودة، وعدد الأسئلة لكل قسم.</td></tr>
+              <tr><td><strong>Questions</strong></td><td>بحث وتصفية، نشر أو إلغاء نشر، ومحرّر كامل للسؤال.</td></tr>
+              <tr><td><strong>Import</strong></td><td>لصق صفوف، معاينة الأخطاء سطراً بسطر، ثم إدخال كمسودات.</td></tr>
+              <tr><td><strong>Users</strong></td><td>أحدث الحسابات وأعدادها.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>صيغة الاستيراد</h3>
+        <p>سطر واحد لكل سؤال، بأي فاصل من هذه: <code>|</code> أو <code>Tab</code> أو <code>,</code>. الترتيب:</p>
+        <p><code>stem|A|B|C|D|correct|explanation|dept|subtopic|difficulty|image|reference</code></p>
+        <p>العنوان اختياري. كل صف يُتحقق منه قبل الإدخال، ويُرفض بسبب واضح (رقم السطر + السبب) إن كان ناقصاً، ويُكتشف المكرر تلقائياً.</p>
+
+        <div class="box danger">
+          <div class="t">مفتاح الخدمة ليس مفتاح دخول</div>
+          <p>مفتاح <code>service_role</code> يتجاوز كل سياسات الحماية. لا تحفظه في ملف، ولا تشاركه، ولا تستخدمه على جهاز مشترك. التطبيق يبقيه في الذاكرة لهذه الجلسة فقط.</p>
+        </div>
+
+        <div class="box note">
+          <div class="t">لماذا مفتاح خدمة أصلاً؟</div>
+          <p>لأن جدول الأسئلة قابل للكتابة من دور الخدمة فقط — لا توجد سياسة كتابة لدور المستخدم، وهذا قرار أمني مقصود: لا أحد يعدّل بنك الأسئلة من داخل التطبيق.</p>
+        </div>
+      </div>
+
+      <div class="lang-en">
+        <h2><span class="num">16</span> Admin CMS</h2>
+        <p class="sub">An admin screen, not a student one — opened with a service key entered on the spot and never stored.</p>
+
+        <figure>
+          <div class="phone"><img src="screens/admin.png" alt="Admin CMS"></div>
+          <figcaption>Figure 15 — <b>Admin CMS</b>: dashboard, questions, import, users.</figcaption>
+        </figure>
+
+        <div class="scroll-x">
+          <table>
+            <thead><tr><th>Tab</th><th>What you can do</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Dashboard</strong></td><td>Totals, published vs draft, and per-department counts.</td></tr>
+              <tr><td><strong>Questions</strong></td><td>Search and filter, publish or unpublish, and a full question editor.</td></tr>
+              <tr><td><strong>Import</strong></td><td>Paste rows, preview errors line by line, then insert as drafts.</td></tr>
+              <tr><td><strong>Users</strong></td><td>Recent accounts and counts.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Import format</h3>
+        <p>One row per question, with any of these separators: <code>|</code>, <code>Tab</code> or <code>,</code>. Order:</p>
+        <p><code>stem|A|B|C|D|correct|explanation|dept|subtopic|difficulty|image|reference</code></p>
+        <p>The header row is optional. Every row is validated before insertion and rejected with a reason (line number + cause) if incomplete; duplicates are detected automatically.</p>
+
+        <div class="box danger">
+          <div class="t">A service key is not a login</div>
+          <p>The <code>service_role</code> key bypasses every access policy. Do not store it in a file, do not share it, and do not use it on a shared machine. The app keeps it in memory for that session only.</p>
+        </div>
+
+        <div class="box note">
+          <div class="t">Why a service key at all?</div>
+          <p>Because the questions table is writable only by the service role — there is deliberately no write policy for the user role, so nobody edits the bank from inside the app.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================== 17 -->
+    <section id="content">
+      <div class="lang-ar">
+        <h2><span class="num">١٧</span> المحتوى والمصادر</h2>
+        <p class="sub">أرقام البنك الحقيقية، وتغطية الصور، وحدود المصادر.</p>
+
+        <div class="statgrid">
+          <div class="stat"><div class="k">الأسئلة</div><div class="v">2,402</div><div class="n">منشورة ومحمولة</div></div>
+          <div class="stat"><div class="k">الأقسام</div><div class="v">8</div><div class="n">D1 – D8</div></div>
+          <div class="stat"><div class="k">الصور</div><div class="v">73</div><div class="n">60 لوح + 13 شكلاً</div></div>
+          <div class="stat"><div class="k">تلميحات المدى</div><div class="v">468</div><div class="n">من 2402 سؤالاً</div></div>
+        </div>
+
+        <div class="scroll-x">
+          <table>
+            <thead><tr><th>القسم</th><th>الاسم</th><th>العدد</th></tr></thead>
+            <tbody>
+              <tr><td><strong>D1</strong></td><td>Hematology &amp; Hemostasis</td><td>362</td></tr>
+              <tr><td><strong>D2</strong></td><td>Chemistry &amp; Fluids</td><td>815</td></tr>
+              <tr><td><strong>D3</strong></td><td>Bacteriology &amp; Mycology</td><td>382</td></tr>
+              <tr><td><strong>D4</strong></td><td>Parasito/Viro/TB</td><td>164</td></tr>
+              <tr><td><strong>D5</strong></td><td>Histo &amp; Cyto</td><td>25</td></tr>
+              <tr><td><strong>D6</strong></td><td>Blood Bank</td><td>236</td></tr>
+              <tr><td><strong>D7</strong></td><td>Immuno &amp; Molecular</td><td>287</td></tr>
+              <tr><td><strong>D8</strong></td><td>QC &amp; Safety</td><td>131</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>الصور ليست زينة: 60 لوحاً مجهرياً مأخوذة من ألواح المصدر الملوّنة، و13 شكلاً وجدولاً أُعيد رسمها كقصاصات صفحات من نفس المصدر. الصور الناقصة مُسجّلة في <code>content/figure-gaps.json</code> — 41 حالة لم تُحل، وأغلبها لا يملك صورة قابلة للاستخراج في المصدر نفسه.</p>
+
+        <div class="box note">
+          <div class="t">الشفافية قبل التغطية</div>
+          <p>لم نضع صورة تقريبية أو مولّدة لتغطية الفراغ. السؤال بلا صورة يظهر نصياً، وهذا أفضل من صورة مضلّلة في بنك طبي.</p>
+        </div>
+
+        <div class="box warn">
+          <div class="t">ملاحظة حقوق</div>
+          <p>المحتوى مجمّع من مصادر متعددة، وبعضها محمي. المستودع خاص في الوقت الحالي، وأي نشر عام أو تسويق تجاري يحتاج مراجعة حقوق مستقلة قبل النشر.</p>
+        </div>
+      </div>
+
+      <div class="lang-en">
+        <h2><span class="num">17</span> Content &amp; sources</h2>
+        <p class="sub">The real numbers, the image coverage, and the limits of the sources.</p>
+
+        <div class="statgrid">
+          <div class="stat"><div class="k">Questions</div><div class="v">2,402</div><div class="n">published and bundled</div></div>
+          <div class="stat"><div class="k">Departments</div><div class="v">8</div><div class="n">D1 – D8</div></div>
+          <div class="stat"><div class="k">Images</div><div class="v">73</div><div class="n">60 plates + 13 figures</div></div>
+          <div class="stat"><div class="k">Range hints</div><div class="v">468</div><div class="n">of 2,402 questions</div></div>
+        </div>
+
+        <div class="scroll-x">
+          <table>
+            <thead><tr><th>Dept</th><th>Name</th><th>Count</th></tr></thead>
+            <tbody>
+              <tr><td><strong>D1</strong></td><td>Hematology &amp; Hemostasis</td><td>362</td></tr>
+              <tr><td><strong>D2</strong></td><td>Chemistry &amp; Fluids</td><td>815</td></tr>
+              <tr><td><strong>D3</strong></td><td>Bacteriology &amp; Mycology</td><td>382</td></tr>
+              <tr><td><strong>D4</strong></td><td>Parasito/Viro/TB</td><td>164</td></tr>
+              <tr><td><strong>D5</strong></td><td>Histo &amp; Cyto</td><td>25</td></tr>
+              <tr><td><strong>D6</strong></td><td>Blood Bank</td><td>236</td></tr>
+              <tr><td><strong>D7</strong></td><td>Immuno &amp; Molecular</td><td>287</td></tr>
+              <tr><td><strong>D8</strong></td><td>QC &amp; Safety</td><td>131</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>The images are not decoration: 60 microscopy plates taken from the source's colour plate section, and 13 figures and tables re-rendered as page clips from the same source. Missing figures are logged in <code>content/figure-gaps.json</code> — 41 unresolved cases, most of which have no extractable image in the source at all.</p>
+
+        <div class="box note">
+          <div class="t">Honesty before coverage</div>
+          <p>No placeholder or generated image was inserted to fill a gap. A question without a figure is shown as text, which beats a misleading image inside a medical bank.</p>
+        </div>
+
+        <div class="box warn">
+          <div class="t">A note on rights</div>
+          <p>The content is assembled from multiple sources, some of them protected. The repository is private today, and any public release or commercial launch needs an independent rights review first.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================== 18 -->
+    <section id="faq">
+      <div class="lang-ar">
+        <h2><span class="num">١٨</span> أسئلة شائعة ومشاكل</h2>
+        <p class="sub">أكثر ما يُسأل، بإجابة مباشرة.</p>
+
+        <details open>
+          <summary>هل يعمل التطبيق فعلاً بدون إنترنت؟</summary>
+          <div class="body"><p>نعم. البنك (4.8 ميغابايت) والصور كلها داخل التطبيق. الإنترنت مطلوب فقط للمزامنة وتأكيد البريد واستعادة كلمة السر.</p></div>
+        </details>
+        <details>
+          <summary>حليت سؤالاً صحيحاً وظهرت النسبة 40% — لماذا؟</summary>
+          <div class="body"><p>الإتقان متوسط متحرك، وأول خمس إجابات وزنها 0.4. إجابة صحيحة واحدة = 40%، وتتضح النسبة بعد عشر إجابات. الرقم ليس «نسبة ما حللته».</p></div>
+        </details>
+        <details>
+          <summary>لماذا الشرح بالإنجليزية ولا يوجد ترجمة؟</summary>
+          <div class="body"><p>لأن الامتحان إنجليزي، ولأن ترجمة المصطلح المخبري تفقد دقة حاسمة (فرق MCV و RDW مثلاً). الواجهة وحدها مترجمة.</p></div>
+        </details>
+        <details>
+          <summary>ما معنى «محاولة ثانية = نصف درجة»؟</summary>
+          <div class="body"><p>إن أعدت سؤالاً سبق أن أخطأت فيه، الإجابة الصحيحة تُحسب 0.5. الغرض ألا يساوي التكرار حتى الحفظ إتقاناً من أول محاولة.</p></div>
+        </details>
+        <details>
+          <summary>لم يصل رمز التأكيد إلى بريدي.</summary>
+          <div class="body"><p>تحقّق من مجلد الرسائل غير المرغوبة، ثم اضغط «Resend code». الرمز يصل من مرسل التطبيق؛ إن تكرّر الفشل فالمشكلة في إعداد البريد على الخادم لا في جهازك.</p></div>
+        </details>
+        <details>
+          <summary>هل تُرفع ملاحظاتي إلى السحابة؟</summary>
+          <div class="body"><p>لا. الملاحظات محلية بالكامل، ولا تُزامَن. بطاقات المراجعة والسلسلة هي ما يُزامَن.</p></div>
+        </details>
+        <details>
+          <summary>هل يقرأ التطبيق نتائج تحاليلي أو يتصل بجهاز؟</summary>
+          <div class="body"><p>لا. لا يوجد أي اتصال بأجهزة المختبر ولا بملفات LIS. كل الأرقام تكتبها أنت أو تأتي مع السؤال.</p></div>
+        </details>
+        <details>
+          <summary>أعدت تثبيت التطبيق — هل فقدت تقدّمي؟</summary>
+          <div class="body"><p>إن كنت سجّلت الدخول وزامنت، تقدّمك في حسابك ويُستعاد. إن كنت تعمل محلياً فقط، فالتقدّم يُمسح مع بيانات التطبيق.</p></div>
+        </details>
+        <details>
+          <summary>هل يعمل على iOS أو الحاسب؟</summary>
+          <div class="body"><p>نسخة الويب تعمل على الحاسب وأي متصفح حديث. حزمة iOS لم تُبنَ ولم تُختبر بعد، فلا تعتمد عليها.</p></div>
+        </details>
+        <details>
+          <summary>الإشعار اليومي لا يظهر.</summary>
+          <div class="body"><p>يحتاج إذن الإشعارات، وقد تمنعه بعض إصدارات أندرويد من إعدادات النظام. الإشعار محلي من الجهاز، لا يعتمد على السحابة.</p></div>
+        </details>
+      </div>
+
+      <div class="lang-en">
+        <h2><span class="num">18</span> FAQ &amp; troubleshooting</h2>
+        <p class="sub">The questions that come up most, answered straight.</p>
+
+        <details open>
+          <summary>Does it really work without internet?</summary>
+          <div class="body"><p>Yes. The bank (4.8 MB) and all images live inside the app. A connection is needed only for sync, email confirmation and password reset.</p></div>
+        </details>
+        <details>
+          <summary>I answered one correctly and mastery showed 40% — why?</summary>
+          <div class="body"><p>Mastery is a rolling average where the first five answers carry a 0.4 weight. One correct answer = 40%, and the figure settles after about ten answers. It is not "percent solved".</p></div>
+        </details>
+        <details>
+          <summary>Why is the explanation in English with no translation?</summary>
+          <div class="body"><p>Because the exam is English, and translating a lab term loses decisive precision (MCV versus RDW, for example). Only the chrome is translated.</p></div>
+        </details>
+        <details>
+          <summary>What does "second attempt = half credit" mean?</summary>
+          <div class="body"><p>Re-answering a question you previously missed earns 0.5. The point is that repeating until memorised should not equal first-time mastery.</p></div>
+        </details>
+        <details>
+          <summary>The confirmation code never arrives.</summary>
+          <div class="body"><p>Check spam, then tap "Resend code". The code is sent by the app's own sender; if it keeps failing, the cause is the server-side mail configuration, not your device.</p></div>
+        </details>
+        <details>
+          <summary>Are my notes uploaded to the cloud?</summary>
+          <div class="body"><p>No. Notes are fully local and never synced. Review cards and the streak are what sync.</p></div>
+        </details>
+        <details>
+          <summary>Does the app read my lab results or connect to an instrument?</summary>
+          <div class="body"><p>No. There is no connection to any analyser or LIS. Every number is either typed by you or comes with the question.</p></div>
+        </details>
+        <details>
+          <summary>I reinstalled — did I lose my progress?</summary>
+          <div class="body"><p>If you signed in and synced, progress is on your account and comes back. If you worked purely offline, progress is cleared with the app data.</p></div>
+        </details>
+        <details>
+          <summary>Does it run on iOS or desktop?</summary>
+          <div class="body"><p>The web build runs on desktop and any modern browser. The iOS package has not been built or tested, so do not rely on it.</p></div>
+        </details>
+        <details>
+          <summary>The daily reminder does not appear.</summary>
+          <div class="body"><p>It needs notification permission, and some Android builds block it from system settings. The reminder is generated locally, not from the cloud.</p></div>
+        </details>
+      </div>
+    </section>
+
+    <!-- ======================================================== 19 -->
+    <section id="limits">
+      <div class="lang-ar">
+        <h2><span class="num">١٩</span> الحدود والتنبيه الطبي</h2>
+        <p class="sub">ما لا يفعله التطبيق، مكتوباً بصراحة قبل أن تكتشفه في الامتحان.</p>
+
+        <div class="box danger">
+          <div class="t">تنبيه طبي</div>
+          <p>
+            هذا التطبيق <strong>أداة مذاكرة</strong>، وليس جهازاً طبياً ولا مرجعاً سريرياً. لا تستخدمه لتشخيص مريض،
+            ولا لاتخاذ قرار علاجي، ولا للتحقق من نتيجة تحليل حقيقية. المدى الطبيعي يختلف بين المعامل،
+            والأسئلة قد تحتوي تبسيطاً مقصوداً لأغراض التعليم.
+          </p>
+        </div>
+
+        <div class="scroll-x">
+          <table>
+            <thead><tr><th style="width:32%">الحد</th><th>التفصيل</th></tr></thead>
+            <tbody>
+              <tr><td>تغطية غير متكافئة</td><td>D2 فيه 815 سؤالاً بينما D5 فيه 25 فقط. الامتحان الشامل يعوّض بترجيح الأوزان، لكن العمق ليس متساوياً.</td></tr>
+              <tr><td>صور ناقصة</td><td>73 صورة فقط، و41 حالة شكل غير محلولة. أسئلة كثيرة تظهر نصية رغم أنها تحتاج صورة في الواقع.</td></tr>
+              <tr><td>جودة الشرح متفاوتة</td><td>أسئلة مُنسّقة بعمق، وأخرى مستوردة بشرح أقصر. لا تتوقع نفس الطول في كل سؤال.</td></tr>
+              <tr><td>بلا ربط بموديل أو جهاز</td><td>الأسئلة ليست مرتبطة بأجهزة أو معامل معينة؛ القيم عامة تعليمية.</td></tr>
+              <tr><td>بلا ضمان مطابقة الامتحان</td><td>الأوزان تتبع مخطط ASCP المنشور، لكنها ليست الامتحان نفسه ولا ضماناً للنجاح.</td></tr>
+              <tr><td>محتوى إنجليزي فقط</td><td>لا ترجمة آلية للنصوص الطبية، ولا خطة لإضافتها.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="box note">
+          <div class="t">ما الذي يمكن الاعتماد عليه فعلاً؟</div>
+          <p>ثلاثة أشياء: <strong>حجم البنك</strong> (2402 سؤالاً حقيقياً)، <strong>عمل التطبيق بلا إنترنت</strong>، و<strong>جدول المراجعة</strong> الذي يبني نفسه من إجاباتك. هذه الثلاثة تعمل كما هو موصوف هنا.</p>
+        </div>
+      </div>
+
+      <div class="lang-en">
+        <h2><span class="num">19</span> Limits &amp; medical notice</h2>
+        <p class="sub">What the app does not do, stated plainly before you find out in an exam.</p>
+
+        <div class="box danger">
+          <div class="t">Medical notice</div>
+          <p>
+            This app is a <strong>study tool</strong>, not a medical device and not a clinical reference. Do not use it
+            to diagnose a patient, to make a treatment decision, or to verify a real laboratory result.
+            Reference ranges differ between laboratories, and questions may contain deliberate
+            simplification for teaching.
+          </p>
+        </div>
+
+        <div class="scroll-x">
+          <table>
+            <thead><tr><th style="width:32%">Limit</th><th>Detail</th></tr></thead>
+            <tbody>
+              <tr><td>Uneven coverage</td><td>D2 holds 815 questions while D5 holds 25. The comprehensive exam compensates with weights, but depth is not equal.</td></tr>
+              <tr><td>Missing images</td><td>Only 73 images, with 41 unresolved figure cases. Many questions that would need a figure in reality are shown as text.</td></tr>
+              <tr><td>Uneven explanation depth</td><td>Some questions are deeply curated, others imported with shorter explanations. Do not expect the same length everywhere.</td></tr>
+              <tr><td>No instrument or model linking</td><td>Questions are not tied to specific analysers or laboratories; values are general and educational.</td></tr>
+              <tr><td>No guarantee of exam parity</td><td>Weights follow the published ASCP outline, but this is not the exam itself and not a promise of passing.</td></tr>
+              <tr><td>English content only</td><td>No machine translation of medical text, and none planned.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="box note">
+          <div class="t">What you can rely on</div>
+          <p>Three things: <strong>the size of the bank</strong> (2,402 real questions), <strong>offline operation</strong>, and <strong>the review schedule</strong> that builds itself from your answers. Those three behave exactly as described here.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer class="foot">
+  <div class="card">
+    <div class="lang-ar">
+      <h3>عن هذا الدليل</h3>
+      <p style="margin:0 0 8px">
+        دليل استخدام تطبيق <strong>EhabLab — MedLab QBank</strong>، الإصدار 1.0.0+1.
+        الأرقام المذكورة هنا مأخوذة من البنك المدمج في هذا الإصدار تحديداً، وتتغيّر بتغيّر المحتوى.
+        الأشكال في هذا الدليل صور للشاشات كما تُعرض على جهاز أندرويد.
+      </p>
+      <p style="margin:0">مرجع أكاديمي للتدريب على امتحان المختبرات الطبية · <a href="index.html">الدليل السريع</a> · <a href="#intro">↑ أعلى الصفحة</a></p>
+    </div>
+    <div class="lang-en">
+      <h3>About this guide</h3>
+      <p style="margin:0 0 8px">
+        User guide for <strong>EhabLab — MedLab QBank</strong>, version 1.0.0+1.
+        Every number here is taken from the bank bundled in this exact build and moves when the content does.
+        The figures show the screens as they render on an Android device.
+      </p>
+      <p style="margin:0">An academic study companion for the medical laboratory science exam · <a href="index.html">Quick guide</a> · <a href="#intro">↑ Back to top</a></p>
+    </div>
+  </div>
+</footer>
+
+<a class="top lang-ar" href="#intro">↑ أعلى</a>
+<a class="top lang-en" href="#intro">↑ Top</a>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  var KEY = 'ehablab_docs_lang';
+
+  function apply(lang) {
+    root.setAttribute('data-lang', lang);
+    root.setAttribute('lang', lang);
+    root.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+    document.querySelectorAll('[data-lang-set]').forEach(function (b) {
+      b.classList.toggle('on', b.getAttribute('data-lang-set') === lang);
+    });
+  }
+
+  var saved = null;
+  try { saved = localStorage.getItem(KEY); } catch (e) {}
+  apply(saved === 'en' ? 'en' : 'ar');
+
+  document.querySelectorAll('[data-lang-set]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var lang = b.getAttribute('data-lang-set');
+      apply(lang);
+      try { localStorage.setItem(KEY, lang); } catch (e) {}
+    });
+  });
+
+  // active section highlighting in the TOC
+  var links = [].slice.call(document.querySelectorAll('.toc a'));
+  var sections = links
+    .map(function (a) { return document.getElementById(a.getAttribute('href').slice(1)); })
+    .filter(Boolean);
+
+  if ('IntersectionObserver' in window) {
+    var obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        links.forEach(function (a) {
+          a.classList.toggle('active', a.getAttribute('href') === '#' + en.target.id);
+        });
+      });
+    }, { rootMargin: '-15% 0px -70% 0px', threshold: 0 });
+    sections.forEach(function (s) { obs.observe(s); });
+  }
+})();
+</script>
+
+</body>
+</html>
